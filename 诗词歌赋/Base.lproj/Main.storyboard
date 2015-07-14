@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="15A204h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,12 +16,77 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img3" translatesAutoresizingMaskIntoConstraints="NO" id="VG1-jN-gPd">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugj-NC-VYE">
+                                <rect key="frame" x="20" y="28" width="30" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="💔"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6r5-B4-4Rh">
+                                <rect key="frame" x="285" y="28" width="30" height="30"/>
+                                <animations/>
+                                <state key="normal" title="♥️"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASv-lS-Qi7">
+                                <rect key="frame" x="550" y="28" width="30" height="30"/>
+                                <animations/>
+                                <state key="normal" title="➡︎"/>
+                                <connections>
+                                    <action selector="next_poet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0om-68-gUb"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Frb-5k-Ppk">
+                                <rect key="frame" x="20" y="66" width="560" height="514"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" id="Dnz-Bh-HLS">
+                                        <rect key="frame" x="0.0" y="22" width="560" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dnz-Bh-HLS" id="7zV-g7-mH6">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VG1-jN-gPd" firstAttribute="centerX" secondItem="6r5-B4-4Rh" secondAttribute="centerX" id="1lz-mO-E0p"/>
+                            <constraint firstItem="Frb-5k-Ppk" firstAttribute="top" secondItem="Ugj-NC-VYE" secondAttribute="bottom" constant="8" symbolic="YES" id="9yl-ya-CpC"/>
+                            <constraint firstItem="Frb-5k-Ppk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="AS1-3U-bXc"/>
+                            <constraint firstItem="VG1-jN-gPd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FAD-oF-BQh"/>
+                            <constraint firstItem="6r5-B4-4Rh" firstAttribute="baseline" secondItem="ASv-lS-Qi7" secondAttribute="baseline" id="Mci-88-x1a"/>
+                            <constraint firstAttribute="bottom" secondItem="Frb-5k-Ppk" secondAttribute="bottom" constant="20" symbolic="YES" id="RN5-5T-hQh"/>
+                            <constraint firstItem="Ugj-NC-VYE" firstAttribute="baseline" secondItem="6r5-B4-4Rh" secondAttribute="baseline" id="S1q-Lb-cee"/>
+                            <constraint firstItem="Frb-5k-Ppk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YpG-63-BEl"/>
+                            <constraint firstItem="Frb-5k-Ppk" firstAttribute="trailing" secondItem="ASv-lS-Qi7" secondAttribute="trailing" id="aJC-GV-0GP"/>
+                            <constraint firstItem="Ugj-NC-VYE" firstAttribute="leading" secondItem="Frb-5k-Ppk" secondAttribute="leading" id="dkR-qS-ztS"/>
+                            <constraint firstItem="Ugj-NC-VYE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="k02-dO-4YY"/>
+                            <constraint firstItem="VG1-jN-gPd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="n7f-ag-kOH"/>
+                            <constraint firstItem="VG1-jN-gPd" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="vep-8W-deZ"/>
+                            <constraint firstItem="Frb-5k-Ppk" firstAttribute="centerX" secondItem="6r5-B4-4Rh" secondAttribute="centerX" id="zwr-AX-Fn7"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="table" destination="Frb-5k-Ppk" id="94q-FX-Sqd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="142" y="404"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="img3" width="667" height="1216"/>
+    </resources>
 </document>

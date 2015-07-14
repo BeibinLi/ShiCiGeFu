@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8118.20" systemVersion="15A204h" minimumToolsVersion="Xcode 7.0">
-    <entity name="PoetDB" syncable="YES">
+    <entity name="AuthorDB" representedClassName="AuthorModel" syncable="YES">
+        <attribute name="dynasty" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="story" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="write" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PoetDB" inverseName="written_by" inverseEntity="PoetDB" syncable="YES"/>
+    </entity>
+    <entity name="PoetDB" representedClassName="PoetModel" syncable="YES">
         <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="context" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="explain" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="img" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="score" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_notes" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="written_by" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AuthorDB" inverseName="write" inverseEntity="AuthorDB" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PoetDB" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="PoetDB" positionX="-63" positionY="-18" width="128" height="163"/>
+        <element name="AuthorDB" positionX="169" positionY="-18" width="128" height="103"/>
     </elements>
 </model>

@@ -15,9 +15,12 @@ class PoetModel : NSManagedObject {
     @NSManaged var author:String
     @NSManaged var title:String
     @NSManaged var context:String
+    @NSManaged var score:Int // User's rate score
+    
     
     @NSManaged var img:String?
-    @NSManaged var score:Int
+    @NSManaged var user_notes:String?
+    @NSManaged var explain:String? // Poet Explanation
 }
 
 

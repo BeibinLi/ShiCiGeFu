@@ -14,6 +14,10 @@
 		24BAAF9B1B52FB73006B6410 /* DBLoadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BAAF9A1B52FB73006B6410 /* DBLoadHelper.swift */; };
 		24BAAF9D1B52FBA3006B6410 /* PoetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BAAF9C1B52FBA3006B6410 /* PoetModel.swift */; };
 		24BAAF9F1B52FE28006B6410 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24BAAF9E1B52FE28006B6410 /* CoreData.framework */; };
+		24C6C18A1B53061A00EA49D6 /* library_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C6C1891B53061A00EA49D6 /* library_extension.swift */; };
+		24C6C1AF1B5437B500EA49D6 /* AuthorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C6C1AE1B5437B400EA49D6 /* AuthorModel.swift */; };
+		24C6C1B31B54623900EA49D6 /* RMParallaxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C6C1B11B54623900EA49D6 /* RMParallaxItem.swift */; };
+		24C6C1B41B54623900EA49D6 /* RMParallax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C6C1B21B54623900EA49D6 /* RMParallax.swift */; };
 		24C7C0521B51975F00AF6C05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7C0511B51975F00AF6C05 /* AppDelegate.swift */; };
 		24C7C0541B51975F00AF6C05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7C0531B51975F00AF6C05 /* ViewController.swift */; };
 		24C7C0571B51975F00AF6C05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24C7C0551B51975F00AF6C05 /* Main.storyboard */; };
@@ -92,6 +96,11 @@
 		24BAAF9A1B52FB73006B6410 /* DBLoadHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBLoadHelper.swift; sourceTree = "<group>"; };
 		24BAAF9C1B52FBA3006B6410 /* PoetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoetModel.swift; sourceTree = "<group>"; };
 		24BAAF9E1B52FE28006B6410 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		24C6C1891B53061A00EA49D6 /* library_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = library_extension.swift; sourceTree = "<group>"; };
+		24C6C18B1B531A5E00EA49D6 /* 诗词歌赋-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "诗词歌赋-Bridging-Header.h"; sourceTree = "<group>"; };
+		24C6C1AE1B5437B400EA49D6 /* AuthorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorModel.swift; sourceTree = "<group>"; };
+		24C6C1B11B54623900EA49D6 /* RMParallaxItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMParallaxItem.swift; sourceTree = "<group>"; };
+		24C6C1B21B54623900EA49D6 /* RMParallax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMParallax.swift; sourceTree = "<group>"; };
 		24C7C04E1B51975F00AF6C05 /* 诗词歌赋.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "诗词歌赋.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C7C0511B51975F00AF6C05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24C7C0531B51975F00AF6C05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +159,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24C6C1B01B5437C600EA49D6 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				24BAAF9A1B52FB73006B6410 /* DBLoadHelper.swift */,
+				2442E6D71B5223BB008D4CD6 /* PoetDM.xcdatamodeld */,
+				24BAAF9C1B52FBA3006B6410 /* PoetModel.swift */,
+				24C6C1AE1B5437B400EA49D6 /* AuthorModel.swift */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		24C6C1B51B54624500EA49D6 /* External Library */ = {
+			isa = PBXGroup;
+			children = (
+				24C6C1B11B54623900EA49D6 /* RMParallaxItem.swift */,
+				24C6C1B21B54623900EA49D6 /* RMParallax.swift */,
+			);
+			name = "External Library";
+			sourceTree = "<group>";
+		};
 		24C7C0451B51975F00AF6C05 = {
 			isa = PBXGroup;
 			children = (
@@ -180,14 +209,15 @@
 			children = (
 				24C7C0511B51975F00AF6C05 /* AppDelegate.swift */,
 				24C7C0531B51975F00AF6C05 /* ViewController.swift */,
-				24BAAF9A1B52FB73006B6410 /* DBLoadHelper.swift */,
-				24BAAF9C1B52FBA3006B6410 /* PoetModel.swift */,
+				24C6C1891B53061A00EA49D6 /* library_extension.swift */,
 				24C7C0551B51975F00AF6C05 /* Main.storyboard */,
-				2442E6D71B5223BB008D4CD6 /* PoetDM.xcdatamodeld */,
 				2442E6DA1B52282E008D4CD6 /* shici.txt */,
 				24C7C0581B51975F00AF6C05 /* Assets.xcassets */,
 				24C7C05A1B51975F00AF6C05 /* LaunchScreen.storyboard */,
 				24C7C05D1B51975F00AF6C05 /* Info.plist */,
+				24C6C18B1B531A5E00EA49D6 /* 诗词歌赋-Bridging-Header.h */,
+				24C6C1B51B54624500EA49D6 /* External Library */,
+				24C6C1B01B5437C600EA49D6 /* Database */,
 			);
 			path = "诗词歌赋";
 			sourceTree = "<group>";
@@ -330,6 +360,7 @@
 		24C7C0461B51975F00AF6C05 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Beibin Li";
 				TargetAttributes = {
@@ -426,10 +457,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				24C7C0541B51975F00AF6C05 /* ViewController.swift in Sources */,
+				24C6C1B41B54623900EA49D6 /* RMParallax.swift in Sources */,
+				24C6C18A1B53061A00EA49D6 /* library_extension.swift in Sources */,
+				24C6C1B31B54623900EA49D6 /* RMParallaxItem.swift in Sources */,
 				2442E6D91B5223BB008D4CD6 /* PoetDM.xcdatamodeld in Sources */,
 				24C7C0521B51975F00AF6C05 /* AppDelegate.swift in Sources */,
 				24BAAF9B1B52FB73006B6410 /* DBLoadHelper.swift in Sources */,
 				24BAAF9D1B52FBA3006B6410 /* PoetModel.swift in Sources */,
+				24C6C1AF1B5437B500EA49D6 /* AuthorModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,10 +696,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "诗词歌赋/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "U-of-M.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "诗词歌赋/诗词歌赋-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -672,10 +710,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "诗词歌赋/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "U-of-M.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "诗词歌赋/诗词歌赋-Bridging-Header.h";
 			};
 			name = Release;
 		};
