@@ -14,15 +14,16 @@ import Darwin
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIDocumentInteractionControllerDelegate  {
 
     
+    @IBOutlet var text: UITextView!
 
     @IBOutlet var table: UITableView!
     var lines = [String]()
-
+    var poet:PoetModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        load_db_in_frist_launch()
+        load_db_in_frist_launch() // in DBLoadHelper.swift class
         load_introduction()
         
         table.registerClass(UITableViewCell.self, forCellReuseIdentifier: "tableCell");
@@ -31,7 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         table.alpha = 0.7
         
-        next_poet( self ) // load a new poet
+        load_poet( ) // load a new poet if needed
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,46 +42,43 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     
     
-    
-    
     // MARK: Helpers
     
-    
     @IBAction func next_poet(sender: AnyObject) {
-        
+        load_poet(true)
+    }
+    
+    
+    // Load a new poet into self.poet if needed
+    // otherwise, do nothing
+    func load_poet( need_new_poet:Bool = false ) {
         lines.removeAll()
         
-        let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let context:NSManagedObjectContext =  appDel.managedObjectContext
-        
-        let f_request = NSFetchRequest(entityName: "PoetDB")
-        
-        let poets:[AnyObject] = try! context.executeFetchRequest(f_request)
-        
-        var poet:PoetModel? = nil
-        
-        repeat {
-            let num = Int( arc4random() ) % poets.count
-            // unsigned random number with upper bound poets.count, rst in [0, poet.count)
-            poet = poets[num] as? PoetModel
+        if need_new_poet || self.poet == nil {
+            // get a random poet
+            let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let context:NSManagedObjectContext =  appDel.managedObjectContext
             
-            print(poet)
+            let f_request = NSFetchRequest(entityName: "PoetDB")
             
-        } while poet == nil || poet!.score < 0
-        
-        
-        
-        lines.append( poet!.title )
-        lines.append( poet!.author )
-        
-        
-//        let context_array = split(poet!.context.characters)
-//            { $0 == "，" || $0 == "。" || $0 == "？" || $0 == "！" }.map(String.init)
-        
-        
-        
+            let poets:[AnyObject] = try! context.executeFetchRequest(f_request)
+            
+            repeat {
+                let num = Int( arc4random() ) % poets.count
+                // unsigned random number with upper bound poets.count, rst in [0, poet.count)
+                self.poet = poets[num] as? PoetModel
                 
-        let context_array = split(poet!.context.characters)
+                print(poet)
+                
+            } while self.poet == nil || self.poet!.score < 0
+        }
+        
+        
+        // We are sure self.poet is not nil now
+        lines.append( self.poet!.title )
+        lines.append( self.poet!.author )
+        
+        let context_array = split( self.poet!.context.characters)
             {   (c:Character)->Bool in
                 return c=="，" || c == "。" || c == "？" || c == "！" }.map(String.init)
         
@@ -89,8 +87,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         table.reloadData() // call build-in function to reload the whole data
+
+        display_text()
+        
     }
     
+    
+    func display_text() {
+        
+    }
     
     func load_introduction() {
         
@@ -163,14 +168,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
 //        cell.textLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
         
-        cell.textLabel!.numberOfLines = 100
+        cell.textLabel!.numberOfLines = 0 // zero means infinite
         
         
         if(indexPath.row == 0) {    // title
             cell.textLabel!.font = UIFont(name: "Helvetica-Bold", size: 30)
             cell.textLabel!.textColor = UIColor.whiteColor()
             cell.textLabel!.backgroundColor = .blueColor()
-            cell.textLabel!.text = "标题长长长长长长长长长长长长长长长长长长长长长长长长标题"
+            cell.textLabel!.text =  cell.textLabel!.text!  + "标题长长长长长长长长长长长长长长长长长长长长长长长长标题"
             
 //            cell.heightAnchor = NSLayoutDimension()
         }else if(indexPath.row == 1){    // author
@@ -183,6 +188,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.backgroundColor = .clearColor()
             cell.textLabel!.font = UIFont(name: "Helvetica", size: 18)
         }
+        
+//        cell.textLabel!.frame = CGRectMake(0, 0, cell.widthAnchor. , CGFloat.max)
         
         
 //        let label:UILabel = UILabel(frame: CGRectMake(0, 0, cell.widthAnchor, CGFloat.max))

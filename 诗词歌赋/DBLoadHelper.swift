@@ -32,9 +32,9 @@ func load_db_in_frist_launch() {
     
     
     // to delete the following three lines??? debug use only
-    clear_DB()
-    load_file_from_bundle("shici")
-    debug_DB()
+//    clear_DB()
+//    load_file_from_bundle("shici")
+//    debug_DB()
 }
 
 

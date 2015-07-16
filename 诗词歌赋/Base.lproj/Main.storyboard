@@ -5,6 +5,56 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--All Poet TableVC-->
+        <scene sceneID="AsK-NM-Xge">
+            <objects>
+                <viewController id="qAD-ti-Zpj" customClass="AllPoetTableVC" customModule="诗词歌赋" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Yw-V4-sVu"/>
+                        <viewControllerLayoutGuide type="bottom" id="Y5z-Sk-JXP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GuB-YX-GkM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DBG-4m-Qdf">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PoetCell" id="IhO-MU-e00">
+                                        <rect key="frame" x="0.0" y="22" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IhO-MU-e00" id="5WD-7T-Lbb">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="showPoet" id="aNm-8O-GaQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DBG-4m-Qdf" secondAttribute="trailing" id="By3-fm-08U"/>
+                            <constraint firstItem="DBG-4m-Qdf" firstAttribute="bottom" secondItem="Y5z-Sk-JXP" secondAttribute="top" id="H9C-nx-8WX"/>
+                            <constraint firstItem="DBG-4m-Qdf" firstAttribute="top" secondItem="GuB-YX-GkM" secondAttribute="top" id="Jan-B0-zlg"/>
+                            <constraint firstItem="DBG-4m-Qdf" firstAttribute="leading" secondItem="GuB-YX-GkM" secondAttribute="leading" id="yaE-9L-KGz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="DBG-4m-Qdf" id="EIv-2X-MCk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ln8-xI-eIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6" y="1000"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -40,7 +90,7 @@
                                     <action selector="next_poet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0om-68-gUb"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Frb-5k-Ppk">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Frb-5k-Ppk">
                                 <rect key="frame" x="20" y="66" width="560" height="514"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -49,7 +99,7 @@
                                         <rect key="frame" x="0.0" y="22" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dnz-Bh-HLS" id="7zV-g7-mH6">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -57,6 +107,14 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8Q-MC-Ljd">
+                                <rect key="frame" x="404" y="28" width="90" height="30"/>
+                                <animations/>
+                                <state key="normal" title="显示所有诗词"/>
+                                <connections>
+                                    <segue destination="qAD-ti-Zpj" kind="show" id="HS8-Du-tlP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -71,19 +129,22 @@
                             <constraint firstItem="Frb-5k-Ppk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YpG-63-BEl"/>
                             <constraint firstItem="Frb-5k-Ppk" firstAttribute="trailing" secondItem="ASv-lS-Qi7" secondAttribute="trailing" id="aJC-GV-0GP"/>
                             <constraint firstItem="Ugj-NC-VYE" firstAttribute="leading" secondItem="Frb-5k-Ppk" secondAttribute="leading" id="dkR-qS-ztS"/>
+                            <constraint firstItem="ASv-lS-Qi7" firstAttribute="leading" secondItem="x8Q-MC-Ljd" secondAttribute="trailing" constant="56" id="fjx-qf-V6b"/>
                             <constraint firstItem="Ugj-NC-VYE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="k02-dO-4YY"/>
                             <constraint firstItem="VG1-jN-gPd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="n7f-ag-kOH"/>
+                            <constraint firstItem="x8Q-MC-Ljd" firstAttribute="baseline" secondItem="ASv-lS-Qi7" secondAttribute="baseline" id="rgp-MZ-KoZ"/>
                             <constraint firstItem="VG1-jN-gPd" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="vep-8W-deZ"/>
                             <constraint firstItem="Frb-5k-Ppk" firstAttribute="centerX" secondItem="6r5-B4-4Rh" secondAttribute="centerX" id="zwr-AX-Fn7"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="gcw-PU-EC6"/>
                     <connections>
                         <outlet property="table" destination="Frb-5k-Ppk" id="94q-FX-Sqd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="142" y="404"/>
+            <point key="canvasLocation" x="788" y="406"/>
         </scene>
     </scenes>
     <resources>

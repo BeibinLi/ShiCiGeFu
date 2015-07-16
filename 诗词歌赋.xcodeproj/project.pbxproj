@@ -32,6 +32,8 @@
 		24C7C08D1B51975F00AF6C05 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7C08C1B51975F00AF6C05 /* ExtensionDelegate.swift */; };
 		24C7C08F1B51975F00AF6C05 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7C08E1B51975F00AF6C05 /* GlanceController.swift */; };
 		24C7C0911B51975F00AF6C05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C7C0901B51975F00AF6C05 /* Assets.xcassets */; };
+		24D3721B1B58327000D5F2B0 /* AllPoetTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D3721A1B58327000D5F2B0 /* AllPoetTableVC.swift */; };
+		24D3721D1B58449100D5F2B0 /* todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 24D3721C1B58449100D5F2B0 /* todo.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +126,8 @@
 		24C7C08E1B51975F00AF6C05 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
 		24C7C0901B51975F00AF6C05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24C7C0921B51975F00AF6C05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24D3721A1B58327000D5F2B0 /* AllPoetTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllPoetTableVC.swift; sourceTree = "<group>"; };
+		24D3721C1B58449100D5F2B0 /* todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todo.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,8 +213,10 @@
 			children = (
 				24C7C0511B51975F00AF6C05 /* AppDelegate.swift */,
 				24C7C0531B51975F00AF6C05 /* ViewController.swift */,
+				24D3721A1B58327000D5F2B0 /* AllPoetTableVC.swift */,
 				24C6C1891B53061A00EA49D6 /* library_extension.swift */,
 				24C7C0551B51975F00AF6C05 /* Main.storyboard */,
+				24D3721C1B58449100D5F2B0 /* todo.txt */,
 				2442E6DA1B52282E008D4CD6 /* shici.txt */,
 				24C7C0581B51975F00AF6C05 /* Assets.xcassets */,
 				24C7C05A1B51975F00AF6C05 /* LaunchScreen.storyboard */,
@@ -414,6 +420,7 @@
 				24C7C0591B51975F00AF6C05 /* Assets.xcassets in Resources */,
 				24C7C0571B51975F00AF6C05 /* Main.storyboard in Resources */,
 				2442E6DB1B52282E008D4CD6 /* shici.txt in Resources */,
+				24D3721D1B58449100D5F2B0 /* todo.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +466,7 @@
 				24C7C0541B51975F00AF6C05 /* ViewController.swift in Sources */,
 				24C6C1B41B54623900EA49D6 /* RMParallax.swift in Sources */,
 				24C6C18A1B53061A00EA49D6 /* library_extension.swift in Sources */,
+				24D3721B1B58327000D5F2B0 /* AllPoetTableVC.swift in Sources */,
 				24C6C1B31B54623900EA49D6 /* RMParallaxItem.swift in Sources */,
 				2442E6D91B5223BB008D4CD6 /* PoetDM.xcdatamodeld in Sources */,
 				24C7C0521B51975F00AF6C05 /* AppDelegate.swift in Sources */,

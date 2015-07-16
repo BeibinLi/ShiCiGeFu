@@ -65,3 +65,18 @@ extension String {
 }
 
 
+func * (left:Int, right:String) -> String {
+    var rst = ""
+    
+    if left <= 1 { return right }// do nothing
+    
+    for _ in 1...left {
+        rst += right
+    }
+    
+    return rst
+}
+
+func * (inout left: String, right: Int) -> String {
+    return right * left
+}
