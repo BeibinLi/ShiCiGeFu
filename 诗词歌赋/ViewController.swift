@@ -13,16 +13,14 @@ import Darwin
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIDocumentInteractionControllerDelegate  {
 
-    
-    @IBOutlet var text: UITextView!
-
+	
     @IBOutlet var table: UITableView!
     var lines = [String]()
     var poet:PoetModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+		
         load_db_in_frist_launch() // in DBLoadHelper.swift class
         load_introduction()
         
@@ -87,16 +85,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         table.reloadData() // call build-in function to reload the whole data
-
-        display_text()
-        
     }
     
-    
-    func display_text() {
-        
-    }
-    
+	
     func load_introduction() {
         
         let introduction = "introduction_0.1"
@@ -172,21 +163,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         if(indexPath.row == 0) {    // title
-            cell.textLabel!.font = UIFont(name: "Helvetica-Bold", size: 30)
+			cell.textLabel!.font = font(30, is_bold: true)
             cell.textLabel!.textColor = UIColor.whiteColor()
             cell.textLabel!.backgroundColor = .blueColor()
             cell.textLabel!.text =  cell.textLabel!.text!  + "标题长长长长长长长长长长长长长长长长长长长长长长长长标题"
-            
-//            cell.heightAnchor = NSLayoutDimension()
         }else if(indexPath.row == 1){    // author
-            cell.textLabel!.font = UIFont(name: "Helvetica-Bold", size: 20)
+			cell.textLabel!.font = font(20, is_bold: true)
             cell.textLabel!.textColor = .whiteColor()
             cell.textLabel!.backgroundColor = .orangeColor()
         }else{
             cell.textLabel!.textColor = UIColor.blackColor()
             cell.textLabel!.backgroundColor = UIColor.clearColor()
             cell.backgroundColor = .clearColor()
-            cell.textLabel!.font = UIFont(name: "Helvetica", size: 18)
+			cell.textLabel!.font = font(18, is_bold: false)
         }
         
 //        cell.textLabel!.frame = CGRectMake(0, 0, cell.widthAnchor. , CGFloat.max)

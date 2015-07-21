@@ -118,6 +118,8 @@ func load_file_from_bundle(filename:String) {
 }
 
 
+
+// Print in "" JSON file format
 func debug_DB() {
     let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     let context:NSManagedObjectContext =  appDel.managedObjectContext
@@ -131,17 +133,23 @@ func debug_DB() {
     print(objects.count)
     
     
+    print("{\"poet\":[")
+    
     for obj in objects{
         
         if let poet = obj as? PoetModel {
-            print(poet.author)
-            print(poet.title)
-            print(poet.context)
+            var output = "{\n\t\"author:\":\""
+            output += poet.author
+            output += "\", \n\t\"title\":\""
+            output += poet.title
+            output += "\", \n\t\"context\":\""
+            output += poet.context
+            output += "\"\n}, \n"
+            print(output)
         }
-//        let poet2 = obj as! PoetModel
     }
     
-
+    print("]}")
 }
 
 func clear_DB() {

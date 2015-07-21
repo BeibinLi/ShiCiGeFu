@@ -29,6 +29,11 @@ class AllPoetTableVC: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
     func load_poets() {
         
         let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -90,40 +95,33 @@ class AllPoetTableVC: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //set table element
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = table.dequeueReusableCellWithIdentifier("PoetCell", forIndexPath: indexPath) as UITableViewCell
+        
+        
+        // Value1 corresponding to right details, which should be set in storyboard
+        let cell: UITableViewCell? = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "PoetCell")
+
+
+
+// 下面这行是老版本的写法，我也不知道为什么现在不用 dequeueReusableCellWithIdentifier 了。很奇怪
+//        cell = table.dequeueReusableCellWithIdentifier("PoetCell")
         
         
         let poet = poets[indexPath.row] as PoetModel
         
-        
-        var text = poet.author
-        
-        
-        // 我们定义 5 在此，因为诗人名字最多 四个字。 五个字的 space 给了诗人名字，外加一个额外的空格
-        let white_space:Int = 5 - text.length
-        text += (white_space * 2) * String(" ")
-        
-        
-        
-//              The following 4 lines are great, But have bugs in UIView build-in class
-//                      So, depricated
-//        let label1: UILabel = UILabel(frame: cell.frame)
-//        label1.text = poet.title
-//        label1.textAlignment = NSTextAlignment.Right
-//        cell.contentView.addSubview(label1 as UIView)
-        
-        
-        cell.textLabel!.text = text + poet.title // set the cell title
-        cell.textLabel!.textAlignment = NSTextAlignment.Left
-        
-        
-        cell.textLabel!.textColor = UIColor.blackColor()
-        cell.textLabel!.backgroundColor = UIColor.clearColor()
-        cell.backgroundColor = .clearColor()
-        cell.textLabel!.font = UIFont(name: "Helvetica", size: 18)
 
         
-        return cell
+        cell!.textLabel!.text = poet.title // set the cell title
+        cell!.textLabel!.textAlignment = NSTextAlignment.Left
+    
+        
+        cell!.textLabel!.textColor = UIColor.blackColor()
+        cell!.textLabel!.backgroundColor = UIColor.clearColor()
+        cell!.backgroundColor = .clearColor()
+        cell!.textLabel!.font = UIFont(name: "Helvetica", size: 18)
+
+        cell!.detailTextLabel?.text = poet.author
+        
+        return cell!
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -134,8 +132,7 @@ class AllPoetTableVC: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-        
+		        
         if editingStyle == .Delete {
             
             //            let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate

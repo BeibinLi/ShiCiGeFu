@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2404DBE11B5ECD09009257D6 /* STXINGKA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2404DBE01B5ECD09009257D6 /* STXINGKA.ttf */; };
+		2404DBE31B5ECDD9009257D6 /* STXINWEI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2404DBE21B5ECDD9009257D6 /* STXINWEI.ttf */; };
+		241A88901B5EBB1200562231 /* Poet_Json.json in Resources */ = {isa = PBXBuildFile; fileRef = 241A888F1B5EBB1200562231 /* Poet_Json.json */; };
+		241A88921B5EC23600562231 /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A88911B5EC23600562231 /* FontHelper.swift */; };
 		2442E6D31B521BBF008D4CD6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24C7C07B1B51975F00AF6C05 /* Interface.storyboard */; };
 		2442E6D41B521BC6008D4CD6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24C7C07B1B51975F00AF6C05 /* Interface.storyboard */; };
 		2442E6D91B5223BB008D4CD6 /* PoetDM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2442E6D71B5223BB008D4CD6 /* PoetDM.xcdatamodeld */; };
@@ -93,6 +97,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2404DBE01B5ECD09009257D6 /* STXINGKA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STXINGKA.ttf; sourceTree = "<group>"; };
+		2404DBE21B5ECDD9009257D6 /* STXINWEI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STXINWEI.ttf; sourceTree = "<group>"; };
+		241A888F1B5EBB1200562231 /* Poet_Json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Poet_Json.json; sourceTree = "<group>"; };
+		241A88911B5EC23600562231 /* FontHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		2442E6D81B5223BB008D4CD6 /* PoetDM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PoetDM.xcdatamodel; sourceTree = "<group>"; };
 		2442E6DA1B52282E008D4CD6 /* shici.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shici.txt; sourceTree = "<group>"; };
 		24BAAF9A1B52FB73006B6410 /* DBLoadHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBLoadHelper.swift; sourceTree = "<group>"; };
@@ -163,6 +171,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2404DBE61B5ECF46009257D6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				241A88911B5EC23600562231 /* FontHelper.swift */,
+				2404DBE01B5ECD09009257D6 /* STXINGKA.ttf */,
+				2404DBE21B5ECDD9009257D6 /* STXINWEI.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		24C6C1B01B5437C600EA49D6 /* Database */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,7 +232,6 @@
 				24C7C0511B51975F00AF6C05 /* AppDelegate.swift */,
 				24C7C0531B51975F00AF6C05 /* ViewController.swift */,
 				24D3721A1B58327000D5F2B0 /* AllPoetTableVC.swift */,
-				24C6C1891B53061A00EA49D6 /* library_extension.swift */,
 				24C7C0551B51975F00AF6C05 /* Main.storyboard */,
 				24D3721C1B58449100D5F2B0 /* todo.txt */,
 				2442E6DA1B52282E008D4CD6 /* shici.txt */,
@@ -222,6 +239,9 @@
 				24C7C05A1B51975F00AF6C05 /* LaunchScreen.storyboard */,
 				24C7C05D1B51975F00AF6C05 /* Info.plist */,
 				24C6C18B1B531A5E00EA49D6 /* 诗词歌赋-Bridging-Header.h */,
+				24C6C1891B53061A00EA49D6 /* library_extension.swift */,
+				241A888F1B5EBB1200562231 /* Poet_Json.json */,
+				2404DBE61B5ECF46009257D6 /* Fonts */,
 				24C6C1B51B54624500EA49D6 /* External Library */,
 				24C6C1B01B5437C600EA49D6 /* Database */,
 			);
@@ -417,10 +437,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				24C7C05C1B51975F00AF6C05 /* LaunchScreen.storyboard in Resources */,
+				2404DBE11B5ECD09009257D6 /* STXINGKA.ttf in Resources */,
 				24C7C0591B51975F00AF6C05 /* Assets.xcassets in Resources */,
+				2404DBE31B5ECDD9009257D6 /* STXINWEI.ttf in Resources */,
 				24C7C0571B51975F00AF6C05 /* Main.storyboard in Resources */,
 				2442E6DB1B52282E008D4CD6 /* shici.txt in Resources */,
 				24D3721D1B58449100D5F2B0 /* todo.txt in Resources */,
+				241A88901B5EBB1200562231 /* Poet_Json.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +490,7 @@
 				24C6C1B41B54623900EA49D6 /* RMParallax.swift in Sources */,
 				24C6C18A1B53061A00EA49D6 /* library_extension.swift in Sources */,
 				24D3721B1B58327000D5F2B0 /* AllPoetTableVC.swift in Sources */,
+				241A88921B5EC23600562231 /* FontHelper.swift in Sources */,
 				24C6C1B31B54623900EA49D6 /* RMParallaxItem.swift in Sources */,
 				2442E6D91B5223BB008D4CD6 /* PoetDM.xcdatamodeld in Sources */,
 				24C7C0521B51975F00AF6C05 /* AppDelegate.swift in Sources */,

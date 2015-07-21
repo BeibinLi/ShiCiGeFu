@@ -4,7 +4,13 @@
         <attribute name="dynasty" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="story" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="write" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PoetDB" inverseName="written_by" inverseEntity="PoetDB" syncable="YES"/>
+        <relationship name="write" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PoetDB" inverseName="written_by" inverseEntity="PoetDB" syncable="YES"/>
+    </entity>
+    <entity name="Comment" syncable="YES">
+        <attribute name="comments" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="to_poet" maxCount="1" deletionRule="Nullify" destinationEntity="PoetDB" syncable="YES"/>
     </entity>
     <entity name="PoetDB" representedClassName="PoetModel" syncable="YES">
         <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
@@ -17,7 +23,8 @@
         <relationship name="written_by" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AuthorDB" inverseName="write" inverseEntity="AuthorDB" syncable="YES"/>
     </entity>
     <elements>
+        <element name="AuthorDB" positionX="207" positionY="-18" width="128" height="103"/>
         <element name="PoetDB" positionX="-63" positionY="-18" width="128" height="163"/>
-        <element name="AuthorDB" positionX="169" positionY="-18" width="128" height="103"/>
+        <element name="Comment" positionX="-27" positionY="-216" width="128" height="103"/>
     </elements>
 </model>
