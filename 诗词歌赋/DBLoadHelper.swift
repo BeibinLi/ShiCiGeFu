@@ -1,3 +1,4 @@
+
 //
 //  DBLoadHelper.swift
 //  诗词歌赋
@@ -19,8 +20,7 @@ func load_db_in_frist_launch() {
         print("Loading data from .txt file ... ")
         
         clear_DB()
-        load_file_from_bundle("shici")
-
+		load_from_json()
         
         // Override the syntax
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: poet_load)
@@ -28,18 +28,53 @@ func load_db_in_frist_launch() {
     }
     
     // else, we are good, do nothing
-    
-    
-    
+
     // to delete the following three lines??? debug use only
 //    clear_DB()
-//    load_file_from_bundle("shici")
-//    debug_DB()
+//	load_from_json()
+//	debug_DB()
 }
 
 
 
-func load_file_from_bundle(filename:String) {
+private func load_from_json() {
+	let url = NSBundle.mainBundle().URLForResource("Poets", withExtension: "json")!
+	let data = NSData(contentsOfURL: url)
+	
+	
+	let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+	let context:NSManagedObjectContext =  appDel.managedObjectContext
+	let entity = NSEntityDescription.entityForName("PoetDB", inManagedObjectContext: context)
+	
+//	var authors = Set<String>() //Set of all the authors
+	do{
+		let dict =  try NSJSONSerialization.JSONObjectWithData(data!, options:  NSJSONReadingOptions.MutableContainers ) as! NSDictionary
+		
+		let arr = dict["poet"] as! NSArray
+		
+		
+		for jsonDictionary in arr {
+			
+			let newItem:PoetModel = PoetModel(entity: entity!,  insertIntoManagedObjectContext: context)
+			newItem.author = jsonDictionary.valueForKey("author") as! String
+			newItem.title = jsonDictionary.valueForKey("title") as! String
+			newItem.context = jsonDictionary.valueForKey("context") as! String
+			newItem.score = 0
+//			authors.insert(  jsonDictionary.valueForKey("author") as! String )
+			
+			try context.save()
+		}
+	}catch let error{
+		print(error)
+		print("Error: Cannot find the data in the file! or Could not save the Database")
+	}
+	
+}
+
+
+/*
+// outdated function. to delete
+private func load_file_from_bundle(filename:String) {
     let filePath = NSBundle.mainBundle().pathForResource(filename,ofType:"txt")
     
     if( filePath == nil ){
@@ -96,49 +131,28 @@ func load_file_from_bundle(filename:String) {
     }catch{
         print("Error: Cannot find the data in the file! or Could not save the Database")
     }
-    
-
-
-
-    // Store the AuthorDB
-//    do{
-//        let author_entity = NSEntityDescription.entityForName("AuthorDB", inManagedObjectContext: context)
-//        
-//        for author in authors{
-////            let newAuthor:PoetModel = PoetModel(entity: entity!,  insertIntoManagedObjectContext: context)
-////            newAuthor.author = temp_author
-//            
-//            try context.save()
-//
-//        }
-//    }catch{
-//        print("Error: Cannot save database!")
-//    }
 
 }
+*/
 
 
-
-// Print in "" JSON file format
-func debug_DB() {
+// Print in DB JSON file format
+private func debug_DB() {
     let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     let context:NSManagedObjectContext =  appDel.managedObjectContext
     
     let f_request = NSFetchRequest(entityName: "PoetDB")
     
     let objects:[AnyObject] = try! context.executeFetchRequest(f_request)
-
-    
-    
+	
     print(objects.count)
-    
-    
+	
     print("{\"poet\":[")
     
     for obj in objects{
         
         if let poet = obj as? PoetModel {
-            var output = "{\n\t\"author:\":\""
+            var output = "{\n\t\"author\":\""
             output += poet.author
             output += "\", \n\t\"title\":\""
             output += poet.title
@@ -152,7 +166,9 @@ func debug_DB() {
     print("]}")
 }
 
-func clear_DB() {
+
+// Clear the PoetDB
+private func clear_DB() {
     let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     let context:NSManagedObjectContext =  appDel.managedObjectContext
     

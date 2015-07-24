@@ -47,7 +47,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
-    // Load a new poet into self.poet if needed
+    // Load a new poet into self.poet if needed (by need_new_poet )
     // otherwise, do nothing
     func load_poet( need_new_poet:Bool = false ) {
         lines.removeAll()
@@ -60,14 +60,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let f_request = NSFetchRequest(entityName: "PoetDB")
             
             let poets:[AnyObject] = try! context.executeFetchRequest(f_request)
-            
+			
+			
+			assert(poets.count > 0, "Error: The poet DB is empty")
+			
             repeat {
                 let num = Int( arc4random() ) % poets.count
                 // unsigned random number with upper bound poets.count, rst in [0, poet.count)
                 self.poet = poets[num] as? PoetModel
-                
-                print(poet)
-                
+				
             } while self.poet == nil || self.poet!.score < 0
         }
         
@@ -96,8 +97,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if( !NSUserDefaults.standardUserDefaults().boolForKey(introduction) ) {
             print("Loading data from .txt file ... ")
             
-            clear_DB()
-            load_file_from_bundle("shici")
+            load_db_in_frist_launch()
             
             let item1 = RMParallaxItem(image: UIImage(named: "img1")!, text: "随时感悟诗词歌赋")
             let item2 = RMParallaxItem(image: UIImage(named: "img2")!, text: "用心体会世间万物")
@@ -166,7 +166,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 			cell.textLabel!.font = font(30, is_bold: true)
             cell.textLabel!.textColor = UIColor.whiteColor()
             cell.textLabel!.backgroundColor = .blueColor()
-            cell.textLabel!.text =  cell.textLabel!.text!  + "标题长长长长长长长长长长长长长长长长长长长长长长长长标题"
+            cell.textLabel!.text =  cell.textLabel!.text!  + "长长长长长长长长长长长长长长长长长长长长长长长长标题"
         }else if(indexPath.row == 1){    // author
 			cell.textLabel!.font = font(20, is_bold: true)
             cell.textLabel!.textColor = .whiteColor()
