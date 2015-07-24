@@ -12,6 +12,10 @@ import CoreData
 import UIKit
 
 
+
+// This function load all the poets into the databse
+// It should be called in AppDelegate, before creating any ViewControllers
+// otherwise, the ViewController would access empty database
 func load_db_in_frist_launch() {
     let poet_load = "poet_1.0_loaded"
     
@@ -64,11 +68,20 @@ private func load_from_json() {
 			
 			try context.save()
 		}
+				
 	}catch let error{
 		print(error)
 		print("Error: Cannot find the data in the file! or Could not save the Database")
 	}
 	
+	
+	
+	print("Finished Loading into CoreData")
+	
+	
+	let f_request = NSFetchRequest(entityName: "PoetDB")
+	let fetch_result:[AnyObject] = try! context.executeFetchRequest(f_request)
+	print("The size in database is \(fetch_result.count)")
 }
 
 

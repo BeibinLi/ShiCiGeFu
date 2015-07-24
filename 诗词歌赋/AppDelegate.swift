@@ -14,16 +14,101 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    
+	
+	
+	
+	/*
+		这个 Function 是用来设置 SlideMenuController 的，详情去 Github 找源代码研究
+	SlideMenuController(） 讲帮助我们创建三个 VC，以及一个 UINavigationController。（此 NavigationController 连接着 mainViewController，即 ViewController class）
+	leftViewController 有一个 variable 叫做 navigationViewController，储存的是 SlideMenuController 中的 NavigationController ，用于 滑动segue
+	如果 rightViewController 也需要 滑动 segue，那么它也许要加入这个变量（navigationViewController）
+	
+	
+	
+	值得注意的是， viewDidLoad 都是在 开 APP 的时候就 call 了。所以有什么需要改变的事项应该在 ViewDidAppear 里面设置：
+		比如：第一次打开 APP 的时候，需要 load CoreData，这时 database 是空的，AllPoetTableVC 里面的 table 是空的，它需要在 ViewDidAppear 里面重新 load table（然而并没有什么卵用... 为什么）
+	
+	*/
+	private func createMenuView() {
+		
+		// create viewController code...
+		let storyboard = UIStoryboard(name: "Main", bundle: nil)
+		
+		
+		// Remember to set the Storyboard ID for these ViewControllers in storyboard
+		let mainViewController = storyboard.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
+		let leftViewController = storyboard.instantiateViewControllerWithIdentifier("AllPoetTableVC") as! AllPoetTableVC
+		let rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController") as! RightViewController
+		
+		let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
+		leftViewController.navigationViewController = nvc
+		
+		
+		
+		
+		let bar = nvc.navigationBar
+		bar.alpha = 0.3
+		bar.tintColor = .orangeColor() // 文字，logo 的颜色
+		bar.backgroundColor = .redColor()
+		bar.translucent = true
+		
+		// Load the Introduction in First Launch, on the top of NavigationController
+		load_introduction(mainViewController)
+		
+		
+		
+		// The mainViewController is Navigation Controller, not the "ViewController"
+		let slideMenuController = SlideMenuController(mainViewController:nvc, leftViewController, rightViewController)
+		
+		self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
+		self.window?.rootViewController = slideMenuController
+		self.window?.makeKeyAndVisible()
+	}
+	
+	
+	private func load_introduction( vc:UIViewController ) {
+		
+		
+		// delete the random part
+		let introduction = "introduction_0.1" // + String(arc4random())
+		
+		
+		if( !NSUserDefaults.standardUserDefaults().boolForKey(introduction) ) {
+			print("Loading data from .txt file ... ")
+			
+			let item1 = RMParallaxItem(image: UIImage(named: "img1")!, text: "随时感悟诗词歌赋")
+			let item2 = RMParallaxItem(image: UIImage(named: "img2")!, text: "用心体会世间万物")
+			let item3 = RMParallaxItem(image: UIImage(named: "img3")!, text: "让灵魂跟上肉体的步伐")
+			let item4 = RMParallaxItem(image: UIImage(named: "img4")!, text: "让经典与您随影随行")
+			
+			let rmParallaxViewController = RMParallax(items: [item1, item2, item3, item4], motion: false)
+			rmParallaxViewController.completionHandler = {
+				UIView.animateWithDuration(0.4, animations: { () -> Void in
+					rmParallaxViewController.view.alpha = 0.0
+				})
+			}
+			
+			// Adding parallax view controller.
+			vc.addChildViewController(rmParallaxViewController)
+			vc.view.addSubview(rmParallaxViewController.view)
+			rmParallaxViewController.didMoveToParentViewController(vc)
+			
+			// Override the syntax
+			NSUserDefaults.standardUserDefaults().setBool(true, forKey: introduction)
+			NSUserDefaults.standardUserDefaults().synchronize();
+		}
+		
+	}
+	
+	
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 		
-		// create viewController code...
 		
-//		let slideMenuController = SlideMenuController(mainViewController: ViewController, leftMenuViewController: AllPoetTableVC, rightMenuViewController: RightViewController)
-//		self.window?.rootViewController = slideMenuController
-//		self.window?.makeKeyAndVisible()
+		// Load the databse before even launching the ViewController. Otherwise, the database would be empty
+		load_db_in_frist_launch()
 		
+		createMenuView()
         return true
     }
     

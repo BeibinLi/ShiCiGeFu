@@ -3,6 +3,7 @@
 //
 //  Created by Yuji Hato on 12/3/14.
 //
+//https://github.com/dekatotoro/SlideMenuControllerSwift
 
 import Foundation
 import UIKit
@@ -79,7 +80,7 @@ public class SlideMenuController: UIViewController, UIGestureRecognizerDelegate 
         initView()
     }
     
-    public convenience init(mainViewController: UIViewController, leftMenuViewController: UIViewController, rightMenuViewController: UIViewController) {
+    public convenience init(mainViewController: UIViewController, _ leftMenuViewController: UIViewController, _ rightMenuViewController: UIViewController) {
         self.init()
         self.mainViewController = mainViewController
         leftViewController = leftMenuViewController
@@ -163,8 +164,7 @@ public class SlideMenuController: UIViewController, UIGestureRecognizerDelegate 
     }
     
     public override func openLeft() {
-        setOpenWindowLevel()
-        
+		setOpenWindowLevel()
         //leftViewControllerのviewWillAppearを呼ぶため
         leftViewController?.beginAppearanceTransition(isLeftHidden(), animated: true)
         openLeftWithVelocity(0.0)
@@ -174,7 +174,6 @@ public class SlideMenuController: UIViewController, UIGestureRecognizerDelegate 
     
     public override func openRight() {
         setOpenWindowLevel()
-        
         //menuViewControllerのviewWillAppearを呼ぶため
         rightViewController?.beginAppearanceTransition(isRightHidden(), animated: true)
         openRightWithVelocity(0.0)
@@ -899,13 +898,35 @@ extension UIViewController {
     
     // Please specify if you want menu gesuture give priority to than targetScrollView
     public func addPriorityToMenuGesuture(targetScrollView: UIScrollView) {
-        if let slideControlelr = slideMenuController() {
-            let recognizers =  slideControlelr.view.gestureRecognizers
+//        if let slideControlelr = slideMenuController() {
+//            let recognizers =  slideControlelr.view.gestureRecognizers
 //            for recognizer in recognizers as! [UIGestureRecognizer] {
 //                if recognizer is UIPanGestureRecognizer {
 //                    targetScrollView.panGestureRecognizer.requireGestureRecognizerToFail(recognizer)
 //                }
 //            }
-        }
+//        }
     }
+}
+
+
+
+// Set the NavigationBarItems for main ViewController
+extension UIViewController {
+	
+	func setNavigationBarItem() {
+		self.addLeftBarButtonWithImage(UIImage(named: "ic_menu_black_24dp")!)
+		self.addRightBarButtonWithImage(UIImage(named: "ic_notifications_black_24dp")!)
+		self.slideMenuController()?.removeLeftGestures()
+		self.slideMenuController()?.removeRightGestures()
+		self.slideMenuController()?.addLeftGestures()
+		self.slideMenuController()?.addRightGestures()
+	}
+	
+	func removeNavigationBarItem() {
+		self.navigationItem.leftBarButtonItem = nil
+		self.navigationItem.rightBarButtonItem = nil
+		self.slideMenuController()?.removeLeftGestures()
+		self.slideMenuController()?.removeRightGestures()
+	}
 }

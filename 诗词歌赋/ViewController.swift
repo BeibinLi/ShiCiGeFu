@@ -21,14 +21,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-        load_db_in_frist_launch() // in DBLoadHelper.swift class
-        load_introduction()
-        
+		
+		self.view.backgroundColor = .redColor()
+		self.navigationController?.navigationBar.backgroundColor = .greenColor()
+
+		
+		
         table.registerClass(UITableViewCell.self, forCellReuseIdentifier: "tableCell");
         table.dataSource = self
         table.delegate = self
         
-        table.alpha = 0.7
+        table.alpha = TEXT_VIEW_TRANSPARENCY
         
         load_poet( ) // load a new poet if needed
     }
@@ -37,9 +40,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+	
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		// setNavigationBarItem() is a function I extended in SlideMenuController.swift
+		self.setNavigationBarItem()
+//		self.navigationController?.alpha = 0.2
+		
+		
+		
+//		self.slideMenuController?.
+	}
 
-    
-    
+	
+	
     // MARK: Helpers
     
     @IBAction func next_poet(sender: AnyObject) {
@@ -48,11 +63,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     // Load a new poet into self.poet if needed (by need_new_poet )
-    // otherwise, do nothing
+    // otherwise, re-draw lines (of the table)
     func load_poet( need_new_poet:Bool = false ) {
         lines.removeAll()
-        
+		
         if need_new_poet || self.poet == nil {
+		// grab poet for self.poet
             // get a random poet
             let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let context:NSManagedObjectContext =  appDel.managedObjectContext
@@ -83,45 +99,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         lines += context_array // union two arrays
-        
-        
         table.reloadData() // call build-in function to reload the whole data
     }
     
 	
-    func load_introduction() {
-        
-        let introduction = "introduction_0.1"
-        
-        
-        if( !NSUserDefaults.standardUserDefaults().boolForKey(introduction) ) {
-            print("Loading data from .txt file ... ")
-            
-            load_db_in_frist_launch()
-            
-            let item1 = RMParallaxItem(image: UIImage(named: "img1")!, text: "随时感悟诗词歌赋")
-            let item2 = RMParallaxItem(image: UIImage(named: "img2")!, text: "用心体会世间万物")
-            let item3 = RMParallaxItem(image: UIImage(named: "img3")!, text: "让灵魂跟上肉体的步伐")
-            let item4 = RMParallaxItem(image: UIImage(named: "img4")!, text: "让经典与您随影随行")
-            
-            let rmParallaxViewController = RMParallax(items: [item1, item2, item3, item4], motion: false)
-            rmParallaxViewController.completionHandler = {
-                UIView.animateWithDuration(0.4, animations: { () -> Void in
-                    rmParallaxViewController.view.alpha = 0.0
-                })
-            }
-            
-            // Adding parallax view controller.
-            self.addChildViewController(rmParallaxViewController)
-            self.view.addSubview(rmParallaxViewController.view)
-            rmParallaxViewController.didMoveToParentViewController(self)
-            
-            // Override the syntax
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: introduction)
-            NSUserDefaults.standardUserDefaults().synchronize();
-        }
-        
-    }
+
     
     // MARK: - Table View
     

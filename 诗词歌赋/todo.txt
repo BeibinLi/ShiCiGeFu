@@ -1,6 +1,8 @@
 
 
 
+- 题目太长，分行显示
+
 - like 按键设置
 - 收藏菜单
 
@@ -10,6 +12,7 @@
 - 字体选择
 
 - 笔记界面
+- 随机图片
 
 
 
@@ -19,7 +22,14 @@
 - 显示诗词的 filter 功能
 - 显示所有诗词的时候，要给用户选择 排序方式，和filter
 - 网络评论
+- 给诗词配图片
 
 
+
+
+
+
+Logo 来源：
+https://commons.wikimedia.org/wiki/File:%E8%A9%A9-bigseal.svg
 
 

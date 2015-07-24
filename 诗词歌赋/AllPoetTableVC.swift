@@ -17,6 +17,9 @@ class AllPoetTableVC: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet var table: UITableView!
     var poets = [PoetModel]()
     var poet:PoetModel? // store the poet we are going to display
+	var navigationViewController: UIViewController?
+	
+	
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,26 +34,17 @@ class AllPoetTableVC: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
     }
-    
+	
+	
+	
     func load_poets() {
-        
         let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context:NSManagedObjectContext =  appDel.managedObjectContext
         
         let f_request = NSFetchRequest(entityName: "PoetDB")
-        
-        
-        do{
-            let fetch_result:[AnyObject] = try! context.executeFetchRequest(f_request)
-            
-            self.poets = fetch_result as! [PoetModel]
-        }catch {
-            print("Could not load the data of poets!")
-        }
-        
-  
+		let fetch_result:[AnyObject] = try! context.executeFetchRequest(f_request)
+		self.poets = fetch_result as! [PoetModel]
     }
     
     
@@ -62,7 +56,7 @@ class AllPoetTableVC: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //        println(indexPath)
         //        println(indexPath.row)
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
+//        let cell = tableView.cellForRowAtIndexPath(indexPath)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         // the above line must be deleted!!!
         
@@ -70,19 +64,14 @@ class AllPoetTableVC: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         
-        performSegueWithIdentifier("showPoet", sender: cell)
-        
+		self.slideMenuController()?.changeMainViewController(self.navigationViewController!, close: true)
+		let nvc = self.slideMenuController()?.mainViewController as! UINavigationController
+		
+		
+		let controller = nvc.topViewController as! ViewController
+		controller.poet = self.poet
+		controller.load_poet(false) // re-draw the lines
     }
-    
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showPoet" {
-            let controller = segue.destinationViewController as! ViewController
-            controller.poet = self.poet
-        }
-    }
-    
-    
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1

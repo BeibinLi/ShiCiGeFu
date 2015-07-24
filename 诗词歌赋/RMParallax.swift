@@ -27,6 +27,18 @@
 */
 typealias RMParallaxCompletionHandler = () -> Void
 
+class RMParallaxItem {
+	
+	var image: UIImage!
+	var text: String!
+	
+	init(image: UIImage, text: String) {
+		self.image = image
+		self.text = text
+	}
+	
+}
+
 enum ScrollDirection: Int {
     case Right = 0, Left
 }
@@ -74,8 +86,15 @@ class RMParallax : UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		
+		// 如果加载这个 PMRarralax 的 ViewController 有 NavigationBar，那么这个 Introduction View 就会很奇怪。所以我们需要把 NavigationView 隐藏起来
+		// 但是如果我们隐藏起来，那么 AutoLayout 会出问题。当我们把 hidden 设为 FALSE 时，autolayout 不会自动重拍。
+		// 由于 Autolayout 太蛋痛，无法 debug，我把所有的 button 放在最下面，而不是 top bar 附近了。
+		// 用 Translucent 的 NavigationBar，再对 button 或者 textView  用 autolayout 可能可以解决这个问题。
+		
         self.parentViewController?.navigationController?.navigationBar.hidden = true
-        
+		
         self.setupRMParallax()
     }
     
@@ -165,6 +184,7 @@ class RMParallax : UIViewController, UIScrollViewDelegate {
     
     func closeButtonSelected(sender: UIButton) {
         self.completionHandler()
+		
         self.parentViewController?.navigationController?.navigationBar.hidden = false
     }
     
@@ -196,7 +216,7 @@ class RMParallax : UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        var direction: ScrollDirection!
+        let direction: ScrollDirection!
         var multiplier: CGFloat = 1.0
         
         let offset: CGFloat = scrollView.contentOffset.x
