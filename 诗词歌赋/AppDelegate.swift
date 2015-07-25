@@ -15,8 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
 	
-	
-	
 	/*
 		这个 Function 是用来设置 SlideMenuController 的，详情去 Github 找源代码研究
 	SlideMenuController(） 讲帮助我们创建三个 VC，以及一个 UINavigationController。（此 NavigationController 连接着 mainViewController，即 ViewController class）

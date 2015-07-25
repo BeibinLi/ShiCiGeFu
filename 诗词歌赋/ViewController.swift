@@ -21,42 +21,29 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		
 		self.view.backgroundColor = .redColor()
 		self.navigationController?.navigationBar.backgroundColor = .greenColor()
-
-		
 		
         table.registerClass(UITableViewCell.self, forCellReuseIdentifier: "tableCell");
         table.dataSource = self
         table.delegate = self
-        
         table.alpha = TEXT_VIEW_TRANSPARENCY
-        
+		table.rowHeight = UITableViewAutomaticDimension
+		table.estimatedRowHeight = 44.0 // 44 is the default. call this line to enable autolayout
+		
         load_poet( ) // load a new poet if needed
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 	
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
 		
-		// setNavigationBarItem() is a function I extended in SlideMenuController.swift
+		// extension function for UIViewController fom SlideMenuController.swift
 		self.setNavigationBarItem()
-//		self.navigationController?.alpha = 0.2
-		
-		
-		
-//		self.slideMenuController?.
 	}
 
 	
 	
     // MARK: Helpers
-    
     @IBAction func next_poet(sender: AnyObject) {
         load_poet(true)
     }
@@ -109,18 +96,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     // for segue
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //        println(indexPath)
-        //        println(indexPath.row)
-        //    let cell = tableView.cellForRowAtIndexPath(indexPath)
-        //        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        // the above line must be deleted!!!
-        
-        
-        //    performSegueWithIdentifier("showCharacter", sender: cell)
-    }
-    
-    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -133,52 +108,52 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //set table element
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath) as UITableViewCell
-        
-        
+
+		
+		/****		In Storyboard:
+		1. Set the prototype cell to "Basic" mdoe
+		2. Set "table.rowHeight = UITableViewAutomaticDimension", and
+		   Set "table.estimatedRowHeight = 44.0" in ViewDidLoad()
+		3. add "cell.textLabel!.numberOfLines = 0" below
+		
+		Resource: https://www.youtube.com/watch?v=0qE8olxB3Kk
+		It's like magic. I don't even know why!
+		*/
+		
         cell.textLabel!.text = lines[indexPath.row] // set the cell title
-        cell.textLabel!.textAlignment = NSTextAlignment.Center
-        
-        
-//        cell.textLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        
-        cell.textLabel!.numberOfLines = 0 // zero means infinite
-        
-        
+		
+		cell.textLabel!.textAlignment = .Center
+		
+		// Note: cell.textLable is Not the Title lable in Storyboard
+		
+		
         if(indexPath.row == 0) {    // title
 			cell.textLabel!.font = font(30, is_bold: true)
             cell.textLabel!.textColor = UIColor.whiteColor()
-            cell.textLabel!.backgroundColor = .blueColor()
-            cell.textLabel!.text =  cell.textLabel!.text!  + "长长长长长长长长长长长长长长长长长长长长长长长长标题"
+
+			// set cell's background color rather than textLabel's color. For safety
+			// Sometimes the textLabel's background color would't be loadded
+			cell.backgroundColor = .blueColor()
+
+            cell.textLabel!.text =  cell.textLabel!.text!
+			print(cell.textLabel!.text)
         }else if(indexPath.row == 1){    // author
 			cell.textLabel!.font = font(20, is_bold: true)
-            cell.textLabel!.textColor = .whiteColor()
+			
+			cell.backgroundColor = .orangeColor()
             cell.textLabel!.backgroundColor = .orangeColor()
         }else{
             cell.textLabel!.textColor = UIColor.blackColor()
-            cell.textLabel!.backgroundColor = UIColor.clearColor()
-            cell.backgroundColor = .clearColor()
+
+			cell.backgroundColor = .clearColor()
 			cell.textLabel!.font = font(18, is_bold: false)
         }
-        
-//        cell.textLabel!.frame = CGRectMake(0, 0, cell.widthAnchor. , CGFloat.max)
-        
-        
-//        let label:UILabel = UILabel(frame: CGRectMake(0, 0, cell.widthAnchor, CGFloat.max))
-////        let label:UILabel = cell.textLabel!
-//        
-//        label.numberOfLines = 0
-//        label.lineBreakMode = NSLineBreakMode.ByWordWrapping
-//        label.sizeToFit()
-//        let height = label.frame.height
-//        
-//        //adjust the label the the new height.
-//        var newFrame = label.frame;
-//        newFrame.size.height = height;
-//        label.frame = newFrame;
-        
-        return cell
+		
+		cell.textLabel!.numberOfLines = 0
+
+		return cell
     }
-    
+	
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false iff you do not want the specified item to be editable.
         return false
@@ -190,19 +165,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
   
         if editingStyle == .Delete {
-            
-//            let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//            let context:NSManagedObjectContext =  appDel.managedObjectContext
-//            
-//            context.deleteObject(objects[indexPath.row] as! NSManagedObject)
-//            
-//            objects.removeAtIndex(indexPath.row)
-//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-//            
-//            do {
-//                try context.save()
-//            } catch _ {
-//            }
+			// Delete Prohibited in Storyboard
             
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.

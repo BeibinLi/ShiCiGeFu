@@ -95,6 +95,8 @@ class RMParallax : UIViewController, UIScrollViewDelegate {
 		
         self.parentViewController?.navigationController?.navigationBar.hidden = true
 		
+//		self.parentViewController?.navigationController?.setToolbarHidden(true, animated: true)
+		
         self.setupRMParallax()
     }
     
@@ -186,6 +188,8 @@ class RMParallax : UIViewController, UIScrollViewDelegate {
         self.completionHandler()
 		
         self.parentViewController?.navigationController?.navigationBar.hidden = false
+		
+//		self.parentViewController?.navigationController?.setToolbarHidden(false, animated: true)
     }
     
     // MARK : UIScrollViewDelegate
