@@ -38,7 +38,7 @@
 		24C7C08F1B51975F00AF6C05 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7C08E1B51975F00AF6C05 /* GlanceController.swift */; };
 		24C7C0911B51975F00AF6C05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C7C0901B51975F00AF6C05 /* Assets.xcassets */; };
 		24D3721B1B58327000D5F2B0 /* AllPoetTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D3721A1B58327000D5F2B0 /* AllPoetTableVC.swift */; };
-		24D3721D1B58449100D5F2B0 /* todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 24D3721C1B58449100D5F2B0 /* todo.txt */; };
+		24D3721D1B58449100D5F2B0 /* Todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 24D3721C1B58449100D5F2B0 /* Todo.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,7 +137,7 @@
 		24C7C0901B51975F00AF6C05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24C7C0921B51975F00AF6C05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24D3721A1B58327000D5F2B0 /* AllPoetTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllPoetTableVC.swift; sourceTree = "<group>"; };
-		24D3721C1B58449100D5F2B0 /* todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todo.txt; sourceTree = "<group>"; };
+		24D3721C1B58449100D5F2B0 /* Todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,7 +236,7 @@
 				249BA75E1B62CC0D003F3719 /* RightViewController.swift */,
 				24D3721A1B58327000D5F2B0 /* AllPoetTableVC.swift */,
 				24C7C0551B51975F00AF6C05 /* Main.storyboard */,
-				24D3721C1B58449100D5F2B0 /* todo.txt */,
+				24D3721C1B58449100D5F2B0 /* Todo.txt */,
 				24C7C0581B51975F00AF6C05 /* Assets.xcassets */,
 				24C7C05A1B51975F00AF6C05 /* LaunchScreen.storyboard */,
 				24C7C05D1B51975F00AF6C05 /* Info.plist */,
@@ -395,6 +395,7 @@
 				TargetAttributes = {
 					24C7C04D1B51975F00AF6C05 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 67K2WBSWPP;
 					};
 					24C7C0611B51975F00AF6C05 = {
 						CreatedOnToolsVersion = 7.0;
@@ -446,7 +447,7 @@
 				2404DBE31B5ECDD9009257D6 /* STXINWEI.ttf in Resources */,
 				24C7C0571B51975F00AF6C05 /* Main.storyboard in Resources */,
 				2404DBEE1B5F3A6B009257D6 /* Poets.json in Resources */,
-				24D3721D1B58449100D5F2B0 /* todo.txt in Resources */,
+				24D3721D1B58449100D5F2B0 /* Todo.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,7 +739,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "诗词歌赋/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "U-of-M.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -752,7 +755,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "诗词歌赋/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "U-of-M.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";

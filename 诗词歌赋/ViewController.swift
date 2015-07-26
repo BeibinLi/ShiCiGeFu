@@ -14,15 +14,20 @@ import Darwin
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIDocumentInteractionControllerDelegate  {
 
 	
+	@IBOutlet var backgroundImageView: UIImageView!
     @IBOutlet var table: UITableView!
     var lines = [String]()
     var poet:PoetModel?
+	
+	static var used_images = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 		
 		self.view.backgroundColor = .redColor()
 		self.navigationController?.navigationBar.backgroundColor = .greenColor()
+		backgroundImageView.contentMode = UIViewContentMode.ScaleAspectFill
+
 		
         table.registerClass(UITableViewCell.self, forCellReuseIdentifier: "tableCell");
         table.dataSource = self
@@ -41,7 +46,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		self.setNavigationBarItem()
 	}
 
-	
 	
     // MARK: Helpers
     @IBAction func next_poet(sender: AnyObject) {
@@ -73,6 +77,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 self.poet = poets[num] as? PoetModel
 				
             } while self.poet == nil || self.poet!.score < 0
+
+			load_image_animation()
         }
         
         
@@ -88,13 +94,61 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         lines += context_array // union two arrays
         table.reloadData() // call build-in function to reload the whole data
     }
-    
+	
+	
+	
+	/*
+		Load a new Background Image and Animate the transition:
+	
+	1. The new image has not appeared before
+	2. If self.poet specified an image, use that one
+	3. If used_images is nearly full, clear it.
+	*/
+	func load_image_animation() {
+		// If poet has default img, load it; otherwise, load rand image
+		var img_name = ""
+		
+		var image_set:[String] = BG_IMAGE_NAMES - ViewController.used_images
+		if image_set.count < 5 {
+			ViewController.used_images.removeAll()
+			image_set = BG_IMAGE_NAMES - ViewController.used_images
+		}
+		
+		img_name = ((self.poet?.img) != nil) ? self.poet!.img! : image_set.rand()
+		
+		var new_image = UIImage( named: img_name )
+		
+		while new_image == nil {
+			img_name = image_set.rand()
+			new_image = UIImage(named: img_name )
+		}
+		
+		ViewController.used_images.append( img_name )
+
+		let secondImageView = UIImageView(image: new_image )
+		secondImageView.frame = view.frame
+		secondImageView.alpha = 0.0
+		
+		// set contentMode, so the animation looks seamless
+		secondImageView.contentMode = UIViewContentMode.ScaleToFill
+		backgroundImageView.contentMode = UIViewContentMode.ScaleAspectFill
+		
+		view.insertSubview(secondImageView, aboveSubview: backgroundImageView)
+		
+		UIView.animateWithDuration(2.0, delay: 0.1, options: .TransitionCrossDissolve, animations: {
+			secondImageView.alpha = 1.0
+			secondImageView.contentMode = UIViewContentMode.ScaleAspectFill
+			}, completion: {_ in
+				self.backgroundImageView.image = secondImageView.image
+				secondImageView.removeFromSuperview()
+		})
+	}
 	
 
-    
+	
     // MARK: - Table View
-    
-    
+	
+	
     // for segue
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -136,7 +190,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 			cell.backgroundColor = .blueColor()
 
             cell.textLabel!.text =  cell.textLabel!.text!
-			print(cell.textLabel!.text)
         }else if(indexPath.row == 1){    // author
 			cell.textLabel!.font = font(20, is_bold: true)
 			
@@ -163,7 +216,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
-  
         if editingStyle == .Delete {
 			// Delete Prohibited in Storyboard
             

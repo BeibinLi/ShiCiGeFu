@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		
 		let bar = nvc.navigationBar
-		bar.alpha = 0.3
+		bar.alpha = TEXT_VIEW_TRANSPARENCY
 		bar.tintColor = .orangeColor() // 文字，logo 的颜色
 		bar.backgroundColor = .redColor()
 		bar.translucent = true

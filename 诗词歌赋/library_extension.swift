@@ -59,9 +59,7 @@ extension String {
         get{
             return self.characters.count
         }
-    }
-
-    
+    }    
 }
 
 
@@ -80,3 +78,45 @@ func * (left:Int, right:String) -> String {
 func * (inout left: String, right: Int) -> String {
     return right * left
 }
+
+extension Array {
+	
+	// return a random element from the array
+	func rand() -> T {
+		let n = self.count
+		assert( n > 0, "ERROR: the array is empty!")
+		let x = Int( arc4random() ) % n
+		return self[x]
+	}
+}
+
+
+// 这么简单的 function 我居然写了半个小时... 智商低啊...
+func - <T: Comparable> (var left: [T], var right: [T]) -> [T] {
+	var rst = [T]()
+	
+	left = left.sort()
+	right = right.sort()
+	
+	var i = 0, j = 0
+	while i < left.count && j < right.count {
+		
+		if( left[i] < right[j]){
+			rst.append( left[i] )
+			i++
+		}else if( left[i] == right[j]){
+			i++; j++;
+		}else {
+			// left[i] > right[j]
+			j++
+		}
+	}
+	// deal with extra elements in left
+	while i < left.count {
+		rst.append( left[i] )
+		i++
+	}
+	
+	return rst
+}
+

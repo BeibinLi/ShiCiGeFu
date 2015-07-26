@@ -134,13 +134,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/ViewController.swift"
-            timestampString = "459196596.879814"
+            timestampString = "459612531.786471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -246,11 +246,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/SlideMenuController.swift"
-            timestampString = "459470289.039115"
+            timestampString = "459614470.070983"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "869"
-            endingLineNumber = "869"
+            startingLineNumber = "877"
+            endingLineNumber = "877"
             landmarkName = "addLeftBarButtonWithImage(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -342,12 +342,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/ViewController.swift"
-            timestampString = "459488378.917915"
+            timestampString = "459637854.060954"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/ViewController.swift"
+            timestampString = "459636768.527691"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "load_image_animation()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/ViewController.swift"
+            timestampString = "459636776.182302"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "load_image_animation()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/ViewController.swift"
+            timestampString = "459636822.751858"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "load_image_animation()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/ViewController.swift"
+            timestampString = "459636824.160364"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "load_image_animation()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

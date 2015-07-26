@@ -160,7 +160,7 @@ class RMParallax : UIViewController, UIScrollViewDelegate {
             textView.text = item.text
 
             textView.textColor = UIColor.whiteColor()
-            textView.alpha = 0.7
+            textView.alpha = TEXT_VIEW_TRANSPARENCY
             
             textView.backgroundColor = UIColor.blackColor()
 

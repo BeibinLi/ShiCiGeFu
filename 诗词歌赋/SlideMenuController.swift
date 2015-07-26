@@ -133,7 +133,15 @@ public class SlideMenuController: UIViewController, UIGestureRecognizerDelegate 
     }
   
     public override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+		
+		
+        if #available(iOS 8.0, *) {
+            super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        } else {
+            // Fallback on earlier versions
+			// how to do this?
+        }
+		
         mainContainerView.transform = CGAffineTransformMakeScale(1.0, 1.0)
         leftContainerView.hidden = true
         rightContainerView.hidden = true
