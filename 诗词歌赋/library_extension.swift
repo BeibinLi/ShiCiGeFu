@@ -59,7 +59,15 @@ extension String {
         get{
             return self.characters.count
         }
-    }    
+    }
+	
+	// return true iff the string has characters excluding whitespaces
+	func noChars() -> Bool {
+		let trim = self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+		if( trim.isEmpty ){ return true }
+		
+		return false
+	}
 }
 
 

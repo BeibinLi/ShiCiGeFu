@@ -70,29 +70,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/PoetModel.swift"
-            timestampString = "458515506.434688"
+            timestampString = "459920819.629334"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "PoetModel"
             landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/AllPoetTableVC.swift"
-            timestampString = "459471746.551029"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -134,11 +118,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/ViewController.swift"
-            timestampString = "459612531.786471"
+            timestampString = "459920819.629334"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -261,76 +245,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/AllPoetTableVC.swift"
-            timestampString = "459471746.551029"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/AllPoetTableVC.swift"
-            timestampString = "459469117.412752"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/AllPoetTableVC.swift"
-            timestampString = "459469118.765761"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/AllPoetTableVC.swift"
-            timestampString = "459470065.609289"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "load_poets()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/AppDelegate.swift"
-            timestampString = "459484794.021167"
+            timestampString = "459918182.373843"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "load_introduction(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -342,11 +262,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/ViewController.swift"
-            timestampString = "459637854.060954"
+            timestampString = "459920819.629334"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -357,13 +277,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/ViewController.swift"
-            timestampString = "459636768.527691"
+            filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/RightViewController.swift"
+            timestampString = "459920819.629334"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "load_image_animation()"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "viewDidAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -373,13 +293,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/ViewController.swift"
-            timestampString = "459636776.182302"
+            filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/RightViewController.swift"
+            timestampString = "459922786.220545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "load_image_animation()"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "textViewDidBeginEditing(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -389,13 +309,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/ViewController.swift"
-            timestampString = "459636822.751858"
+            filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/RightViewController.swift"
+            timestampString = "459922786.220545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "load_image_animation()"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "viewDidDisappear(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -405,13 +325,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/ViewController.swift"
-            timestampString = "459636824.160364"
+            filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/RightViewController.swift"
+            timestampString = "459922786.220545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "load_image_animation()"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "dismiss_keyboard()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -40,9 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
 		leftViewController.navigationViewController = nvc
-		
-		
-		
+		rightViewController.navigationViewController = nvc
 		
 		let bar = nvc.navigationBar
 		bar.alpha = TEXT_VIEW_TRANSPARENCY
@@ -52,7 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		// Load the Introduction in First Launch, on the top of NavigationController
 		load_introduction(mainViewController)
-		
 		
 		
 		// The mainViewController is Navigation Controller, not the "ViewController"

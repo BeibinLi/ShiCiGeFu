@@ -1,14 +1,9 @@
 
 
-
 - like 按键设置
 - 收藏菜单
-
-- Table View 显示行的时候，爆了分成两行啊。
 - Apple Watch 优化
-
 - 字体选择
-
 - 笔记界面
 
 
@@ -22,10 +17,6 @@
 - 给诗词配图片
 
 
-
-
-
-
 Logo 来源：  Resource:
 https://commons.wikimedia.org/wiki/File:%E8%A9%A9-bigseal.svg
 
@@ -34,6 +25,7 @@ https://commons.wikimedia.org/wiki/File:%E8%A9%A9-bigseal.svg
 Done:
 - 题目太长，分行显示
 - 随机图片
+- Table View 显示行的时候，爆了分成两行啊。
 
 
 

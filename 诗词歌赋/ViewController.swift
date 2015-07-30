@@ -12,7 +12,6 @@ import Darwin
 
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIDocumentInteractionControllerDelegate  {
-
 	
 	@IBOutlet var backgroundImageView: UIImageView!
     @IBOutlet var table: UITableView!
@@ -20,7 +19,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var poet:PoetModel?
 	
 	static var used_images = [String]()
-    
+	
+// MARK: - UIViewController Functions
     override func viewDidLoad() {
         super.viewDidLoad()
 		
@@ -47,109 +47,50 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	}
 
 	
-    // MARK: Helpers
-    @IBAction func next_poet(sender: AnyObject) {
-        load_poet(true)
-    }
-    
-    
-    // Load a new poet into self.poet if needed (by need_new_poet )
-    // otherwise, re-draw lines (of the table)
-    func load_poet( need_new_poet:Bool = false ) {
-        lines.removeAll()
+	// 每点一次喜欢按钮，评分 += 1
+	@IBAction func like_button_pressed(sender: AnyObject) {
+		let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		let context:NSManagedObjectContext =  appDel.managedObjectContext
 		
-        if need_new_poet || self.poet == nil {
-		// grab poet for self.poet
-            // get a random poet
-            let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            let context:NSManagedObjectContext =  appDel.managedObjectContext
-            
-            let f_request = NSFetchRequest(entityName: "PoetDB")
-            
-            let poets:[AnyObject] = try! context.executeFetchRequest(f_request)
+		do {
+			var score = self.poet!.score
 			
+			if score + 1 <= 100 {
+				score += 1
+				self.poet?.score  = score
+				self.poet?.setValue( score , forKey: "score")
+			}
 			
-			assert(poets.count > 0, "Error: The poet DB is empty")
-			
-            repeat {
-                let num = Int( arc4random() ) % poets.count
-                // unsigned random number with upper bound poets.count, rst in [0, poet.count)
-                self.poet = poets[num] as? PoetModel
-				
-            } while self.poet == nil || self.poet!.score < 0
-
-			load_image_animation()
-        }
-        
-        
-        // We are sure self.poet is not nil now
-        lines.append( self.poet!.title )
-        lines.append( self.poet!.author )
-        
-        let context_array = split( self.poet!.context.characters)
-            {   (c:Character)->Bool in
-                return c=="，" || c == "。" || c == "？" || c == "！" }.map(String.init)
-        
-        
-        lines += context_array // union two arrays
-        table.reloadData() // call build-in function to reload the whole data
-    }
+			try context.save()
+		}catch let err{
+			print(err)
+		}
+	}
 	
 	
-	
-	/*
-		Load a new Background Image and Animate the transition:
-	
-	1. The new image has not appeared before
-	2. If self.poet specified an image, use that one
-	3. If used_images is nearly full, clear it.
-	*/
-	func load_image_animation() {
-		// If poet has default img, load it; otherwise, load rand image
-		var img_name = ""
+	@IBAction func dislike_button_pressed(sender: AnyObject) {
 		
-		var image_set:[String] = BG_IMAGE_NAMES - ViewController.used_images
-		if image_set.count < 5 {
-			ViewController.used_images.removeAll()
-			image_set = BG_IMAGE_NAMES - ViewController.used_images
+		let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		let context:NSManagedObjectContext =  appDel.managedObjectContext
+		
+		do {
+			self.poet?.score = -10
+			self.poet?.setValue( -10, forKey: "score")
+			
+			try context.save()
+		}catch let err{
+			print(err)
 		}
 		
-		img_name = ((self.poet?.img) != nil) ? self.poet!.img! : image_set.rand()
-		
-		var new_image = UIImage( named: img_name )
-		
-		while new_image == nil {
-			img_name = image_set.rand()
-			new_image = UIImage(named: img_name )
-		}
-		
-		ViewController.used_images.append( img_name )
-
-		let secondImageView = UIImageView(image: new_image )
-		secondImageView.frame = view.frame
-		secondImageView.alpha = 0.0
-		
-		// set contentMode, so the animation looks seamless
-		secondImageView.contentMode = UIViewContentMode.ScaleToFill
-		backgroundImageView.contentMode = UIViewContentMode.ScaleAspectFill
-		
-		view.insertSubview(secondImageView, aboveSubview: backgroundImageView)
-		
-		UIView.animateWithDuration(2.0, delay: 0.1, options: .TransitionCrossDissolve, animations: {
-			secondImageView.alpha = 1.0
-			secondImageView.contentMode = UIViewContentMode.ScaleAspectFill
-			}, completion: {_ in
-				self.backgroundImageView.image = secondImageView.image
-				secondImageView.removeFromSuperview()
-		})
+	}
+	
+	@IBAction func next_poet(sender: AnyObject) {
+		load_poet(true)
 	}
 	
 
 	
-    // MARK: - Table View
-	
-	
-    // for segue
+// MARK: - Table View
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -157,8 +98,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return lines.count
     }
-    
-    
+	
     //set table element
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath) as UITableViewCell
@@ -211,20 +151,101 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Return false iff you do not want the specified item to be editable.
         return false
     }
-    
-    
-    
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-        if editingStyle == .Delete {
-			// Delete Prohibited in Storyboard
-            
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-            
-        }
-    }
-    
+
+	
+// MARK: - Helper Functions
+
+	// Load a new poet into self.poet if needed (by need_new_poet )
+	// otherwise, re-draw lines (of the table)
+	func load_poet( need_new_poet:Bool = false ) {
+		lines.removeAll()
+		
+		if need_new_poet || self.poet == nil {
+			// grab poet for self.poet
+			// get a random poet
+			let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+			let context:NSManagedObjectContext =  appDel.managedObjectContext
+			
+			let f_request = NSFetchRequest(entityName: "PoetDB")
+			
+			let poets:[AnyObject] = try! context.executeFetchRequest(f_request)
+			
+			
+			assert(poets.count > 0, "Error: The poet DB is empty")
+			
+			repeat {
+				let num = Int( arc4random() ) % poets.count
+				// unsigned random number with upper bound poets.count, rst in [0, poet.count)
+				self.poet = poets[num] as? PoetModel
+				
+			} while self.poet == nil || self.poet!.score < 0
+			
+		}
+		
+		load_image_animation()
+		
+		// We are sure self.poet is not nil now
+		lines.append( self.poet!.title )
+		lines.append( self.poet!.author )
+		
+		let context_array = split( self.poet!.context.characters)
+			{   (c:Character)->Bool in
+				return c=="，" || c == "。" || c == "？" || c == "！" }.map(String.init)
+		
+		
+		lines += context_array // union two arrays
+		table.reloadData() // call build-in function to reload the whole data
+	}
+	
+	
+	
+	/*
+	Load a new Background Image and Animate the transition:
+	
+	1. The new image has not appeared before
+	2. If self.poet specified an image, use that one
+	3. If used_images is nearly full, clear it.
+	*/
+	func load_image_animation() {
+		// If poet has default img, load it; otherwise, load rand image
+		var img_name = ""
+		
+		var image_set:[String] = BG_IMAGE_NAMES - ViewController.used_images
+		if image_set.count < 5 {
+			ViewController.used_images.removeAll()
+			image_set = BG_IMAGE_NAMES - ViewController.used_images
+		}
+		
+		img_name = ((self.poet?.img) != nil) ? self.poet!.img! : image_set.rand()
+		
+		var new_image = UIImage( named: img_name )
+		
+		while new_image == nil {
+			img_name = image_set.rand()
+			new_image = UIImage(named: img_name )
+		}
+		
+		ViewController.used_images.append( img_name )
+		
+		let secondImageView = UIImageView(image: new_image )
+		secondImageView.frame = view.frame
+		secondImageView.alpha = 0.0
+		
+		// set contentMode, so the animation looks seamless
+		secondImageView.contentMode = UIViewContentMode.ScaleToFill
+		backgroundImageView.contentMode = UIViewContentMode.ScaleAspectFill
+		
+		view.insertSubview(secondImageView, aboveSubview: backgroundImageView)
+		
+		UIView.animateWithDuration(2.0, delay: 0.1, options: .TransitionCrossDissolve, animations: {
+			secondImageView.alpha = 1.0
+			secondImageView.contentMode = UIViewContentMode.ScaleAspectFill
+			}, completion: {_ in
+				self.backgroundImageView.image = secondImageView.image
+				secondImageView.removeFromSuperview()
+		})
+	}
+	
 
 }
 
