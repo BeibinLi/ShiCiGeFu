@@ -13,20 +13,26 @@ import Darwin
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIDocumentInteractionControllerDelegate  {
 	
-	@IBOutlet var backgroundImageView: UIImageView!
+	var backgroundImageView = UIImageView()
+	var scrollView = UIScrollView()
+
+	
     @IBOutlet var table: UITableView!
+	@IBOutlet var next_button: UIButton!
+	
+	
+	
     var lines = [String]()
     var poet:PoetModel?
 	
 	static var used_images = [String]()
 	
+	
+
+	
 // MARK: - UIViewController Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-		
-		self.view.backgroundColor = .redColor()
-		self.navigationController?.navigationBar.backgroundColor = .greenColor()
-		backgroundImageView.contentMode = UIViewContentMode.ScaleAspectFill
 
 		
         table.registerClass(UITableViewCell.self, forCellReuseIdentifier: "tableCell");
@@ -34,10 +40,38 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         table.delegate = self
         table.alpha = TEXT_VIEW_TRANSPARENCY
 		table.rowHeight = UITableViewAutomaticDimension
+		table.backgroundColor = .grayColor()
 		table.estimatedRowHeight = 44.0 // 44 is the default. call this line to enable autolayout
+		
+//		let effect = UIBlurEffect(style: .Light)
+//		let effectView = UIVisualEffectView(effect: effect)
+//		effectView.frame = self.view.bounds
+//		self.view.insertSubview(effectView, atIndex: 1)
+		
 		
         load_poet( ) // load a new poet if needed
     }
+	
+	
+	func blur(view: UIView) {
+		//only apply the blur if the user hasn't disabled transparency effects
+		if !UIAccessibilityIsReduceTransparencyEnabled() {
+			view.backgroundColor = UIColor.clearColor()
+			let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+			let blurEffectView = UIVisualEffectView(effect: blurEffect)
+			blurEffectView.frame = view.bounds
+			view.addSubview(blurEffectView) //if you have more UIViews on screen, use insertSubview:belowSubview: to place it underneath the lowest view instead
+			
+			//add auto layout constraints so that the blur fills the screen upon rotating device
+			blurEffectView.translatesAutoresizingMaskIntoConstraints = false
+			view.addConstraint(NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0))
+			view.addConstraint(NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0))
+			view.addConstraint(NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0))
+			view.addConstraint(NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0))
+		} else {
+			view.backgroundColor = UIColor.blackColor()
+		}
+	}
 	
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
@@ -121,29 +155,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		// Note: cell.textLable is Not the Title lable in Storyboard
 		
 		
-        if(indexPath.row == 0) {    // title
+        if indexPath.row == 0 {    // title
 			cell.textLabel!.font = font(30, is_bold: true)
             cell.textLabel!.textColor = UIColor.whiteColor()
 
 			// set cell's background color rather than textLabel's color. For safety
 			// Sometimes the textLabel's background color would't be loadded
 			cell.backgroundColor = .blueColor()
-
-            cell.textLabel!.text =  cell.textLabel!.text!
-        }else if(indexPath.row == 1){    // author
+        }else if indexPath.row == 1 {    // author
 			cell.textLabel!.font = font(20, is_bold: true)
-			
 			cell.backgroundColor = .orangeColor()
-            cell.textLabel!.backgroundColor = .orangeColor()
-        }else{
-            cell.textLabel!.textColor = UIColor.blackColor()
-
-			cell.backgroundColor = .clearColor()
+		} else {
+            cell.textLabel!.textColor = .whiteColor()
+			cell.backgroundColor = .grayColor()
 			cell.textLabel!.font = font(18, is_bold: false)
         }
 		
+		// 这样，字体就不是透明的了。
+		cell.textLabel!.alpha = 1
 		cell.textLabel!.numberOfLines = 0
-
+		
 		return cell
     }
 	
@@ -227,26 +258,76 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		
 		ViewController.used_images.append( img_name )
 		
-		let secondImageView = UIImageView(image: new_image )
-		secondImageView.frame = view.frame
-		secondImageView.alpha = 0.0
+		self.scrollView.alpha = 0
+		self.next_button.enabled = false
+		self.set_background( new_image! ) // set background image and scroll view size
+		self.scrollView.alpha = 0.3
+
 		
-		// set contentMode, so the animation looks seamless
-		secondImageView.contentMode = UIViewContentMode.ScaleToFill
-		backgroundImageView.contentMode = UIViewContentMode.ScaleAspectFill
-		
-		view.insertSubview(secondImageView, aboveSubview: backgroundImageView)
-		
-		UIView.animateWithDuration(2.0, delay: 0.1, options: .TransitionCrossDissolve, animations: {
-			secondImageView.alpha = 1.0
-			secondImageView.contentMode = UIViewContentMode.ScaleAspectFill
+		UIView.animateWithDuration(2.0, delay: 0, options: .TransitionCrossDissolve, animations: {
+			self.scrollView.alpha = 1.0
+			self.scrollView.contentMode = UIViewContentMode.ScaleAspectFill
 			}, completion: {_ in
-				self.backgroundImageView.image = secondImageView.image
-				secondImageView.removeFromSuperview()
+				self.next_button.enabled = true
 		})
 	}
-	
 
+	
+	func set_background(image: UIImage) {
+		
+		scrollView.removeFromSuperview()
+		scrollView = UIScrollView( frame: self.view.bounds )
+		scrollView.delegate = self
+		scrollView.backgroundColor = UIColor.blackColor()
+		self.view.insertSubview(scrollView, atIndex: 0) // scrollView at bottom
+		
+		
+		backgroundImageView.removeFromSuperview()
+		backgroundImageView = UIImageView(image: image)
+		scrollView.addSubview(backgroundImageView)
+		
+		scrollView.contentSize = image.size
+		let minHorizScale = scrollView.bounds.width / image.size.width
+		let minVertScale = scrollView.bounds.height / image.size.height
+		scrollView.minimumZoomScale = min(minHorizScale, minVertScale)
+		scrollView.maximumZoomScale = 1.0
+		scrollView.zoomScale = max(minHorizScale, minVertScale)
+		scrollView.contentOffset = CGPoint(
+			x: (scrollView.contentSize.width - scrollView.bounds.width) / 2,
+			y: (scrollView.contentSize.height - scrollView.bounds.height) / 2)
+		
+		// extension
+		setContentInsetToCenterScrollView(scrollView)
+	}
+
+
+}
+
+
+
+extension ViewController: UIScrollViewDelegate {
+	
+	func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+		return scrollView.subviews.isEmpty ? nil : (scrollView.subviews[0] as! UIView)
+	}
+	
+	func scrollViewDidZoom(scrollView: UIScrollView) {
+		setContentInsetToCenterScrollView(scrollView)
+	}
+	
+	func setContentInsetToCenterScrollView(scrollView: UIScrollView) {
+		var leftInset: CGFloat = 0.0
+		if (scrollView.contentSize.width < scrollView.bounds.width) {
+			leftInset = (scrollView.bounds.width - scrollView.contentSize.width) / 2
+		}
+		
+		var topInset: CGFloat = 0.0
+		if (scrollView.contentSize.height < scrollView.bounds.height) {
+			topInset = (scrollView.bounds.height - scrollView.contentSize.height) / 2
+		}
+		
+		scrollView.contentInset = UIEdgeInsets(top: topInset, left: leftInset, bottom: 0, right: 0)
+	}
 }
 
 

@@ -118,11 +118,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/ViewController.swift"
-            timestampString = "459920819.629334"
+            timestampString = "460422536.018689"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -262,11 +262,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/ViewController.swift"
-            timestampString = "459920819.629334"
+            timestampString = "460422536.018689"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -333,6 +333,102 @@
             endingLineNumber = "99"
             landmarkName = "dismiss_keyboard()"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/ViewController.swift"
+            timestampString = "460422536.018689"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "blur(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/ViewController.swift"
+            timestampString = "460422536.018689"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "blur(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/ViewController.swift"
+            timestampString = "460423431.010475"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "329"
+            endingLineNumber = "329"
+            landmarkName = "setContentInsetToCenterScrollView(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/ViewController.swift"
+            timestampString = "460423041.031987"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
+            landmarkName = "load_image_animation()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;.ViewController.load_image_animation (&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;.ViewController)() -&gt; ()"
+                  moduleName = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/temp/Developer/%E8%AF%97%E8%AF%8D%E6%AD%8C%E8%B5%8B/%E8%AF%97%E8%AF%8D%E6%AD%8C%E8%B5%8B/ViewController.swift"
+                  timestampString = "460423000.346015"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "266"
+                  endingLineNumber = "266"
+                  offsetFromSymbolStart = "2160">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;.ViewController.(load_image_animation (&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;.ViewController) -&gt; () -&gt; ()).(closure #1)"
+                  moduleName = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/temp/Developer/%E8%AF%97%E8%AF%8D%E6%AD%8C%E8%B5%8B/%E8%AF%97%E8%AF%8D%E6%AD%8C%E8%B5%8B/ViewController.swift"
+                  timestampString = "460423000.346407"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "267"
+                  endingLineNumber = "267"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

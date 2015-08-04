@@ -18,18 +18,18 @@ class AllPoetTableVC: UIViewController, UITableViewDataSource, UITableViewDelega
 	var poets = [PoetModel]()
 	var poet:PoetModel? // store the poet we are going to display
 	var navigationViewController: UIViewController?
+	@IBOutlet var segmentControl: ADVSegmentedControl!
 	
-	@IBOutlet var sort_seg_control: UISegmentedControl!
-	
-	
-	@IBAction func sort_method_changed(sender: AnyObject) {
-		let choice = self.sort_seg_control.selectedSegmentIndex
+	func segmentValueChanged(sender: AnyObject?){
+		let choice = segmentControl.selectedIndex
 		
 		switch choice {
 		case 0:
 			self.poets.sortInPlace({ self.chinese_compare( $0.title, $1.title) })
 		case 1:
 			self.poets.sortInPlace({ self.chinese_compare( $0.author, $1.author) })
+		case 2:
+			self.poets.sortInPlace({ self.chinese_compare( $0.context, $1.context) })
 		default:
 			print("Error! the selected index is \(choice)")
 		}
@@ -37,13 +37,18 @@ class AllPoetTableVC: UIViewController, UITableViewDataSource, UITableViewDelega
 		table.reloadData()
 	}
 	
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		table.registerClass(UITableViewCell.self, forCellReuseIdentifier: "PoetCell");
 		table.dataSource = self
 		table.delegate = self
+		
+		
+		segmentControl.items = ["诗名排序", "诗人排序", "内容排序"]
+		segmentControl.font = UIFont(name: "Avenir-Black", size: 13)
+		segmentControl.selectedIndex = 1
+		segmentControl.addTarget(self, action: "segmentValueChanged:", forControlEvents: .ValueChanged)
 		
 		load_poets()
 	}
@@ -61,7 +66,7 @@ class AllPoetTableVC: UIViewController, UITableViewDataSource, UITableViewDelega
 		let fetch_result:[AnyObject] = try! context.executeFetchRequest(f_request)
 		self.poets = fetch_result as! [PoetModel]
 		
-		sort_method_changed(self)
+		segmentValueChanged(self)
 	}
 	
 	
