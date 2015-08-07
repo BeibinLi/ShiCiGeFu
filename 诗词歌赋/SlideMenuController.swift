@@ -39,7 +39,6 @@ public class SlideMenuController: UIViewController, UIGestureRecognizerDelegate 
         case FlickClose
     }
     
-    
     struct PanInfo {
         var action: SlideAction
         var shouldBounce: Bool
@@ -404,21 +403,31 @@ public class SlideMenuController: UIViewController, UIGestureRecognizerDelegate 
         }
         
         addShadowToView(leftContainerView)
-        
+		
+		
         UIView.animateWithDuration(duration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { [weak self]() -> Void in
             if let strongSelf = self {
                 strongSelf.leftContainerView.frame = frame
                 strongSelf.opacityView.layer.opacity = Float(SlideMenuOptions.contentViewOpacity)
                 strongSelf.mainContainerView.transform = CGAffineTransformMakeScale(SlideMenuOptions.contentViewScale, SlideMenuOptions.contentViewScale)
-            }
-            }) { [weak self](Bool) -> Void in
+				
+			}
+			}
+			) { [weak self](Bool) -> Void in
                 if let strongSelf = self {
                     strongSelf.disableContentInteraction()
                     strongSelf.leftViewController?.endAppearanceTransition()
                 }
         }
+		
+		add_blur_at_frame(frame, duration)
     }
-    
+	
+	
+	
+	
+
+
     public func openRightWithVelocity(velocity: CGFloat) {
         let xOrigin: CGFloat = rightContainerView.frame.origin.x
     
@@ -435,7 +444,7 @@ public class SlideMenuController: UIViewController, UIGestureRecognizerDelegate 
         }
     
         addShadowToView(rightContainerView)
-    
+		
         UIView.animateWithDuration(duration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { [weak self]() -> Void in
             if let strongSelf = self {
                 strongSelf.rightContainerView.frame = frame
@@ -446,8 +455,13 @@ public class SlideMenuController: UIViewController, UIGestureRecognizerDelegate 
                 if let strongSelf = self {
                     strongSelf.disableContentInteraction()
                     strongSelf.rightViewController?.endAppearanceTransition()
+
+					
                 }
         }
+		
+		
+		add_blur_at_frame(frame, duration)
     }
     
     public func closeLeftWithVelocity(velocity: CGFloat) {
@@ -463,6 +477,9 @@ public class SlideMenuController: UIViewController, UIGestureRecognizerDelegate 
             duration = Double(fabs(xOrigin - finalXOrigin) / velocity)
             duration = Double(fmax(0.1, fmin(1.0, duration)))
         }
+		
+		
+		remove_blur_effect()
         
         UIView.animateWithDuration(duration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { [weak self]() -> Void in
             if let strongSelf = self {
@@ -493,12 +510,16 @@ public class SlideMenuController: UIViewController, UIGestureRecognizerDelegate 
             duration = Double(fabs(xOrigin - CGRectGetWidth(view.bounds)) / velocity)
             duration = Double(fmax(0.1, fmin(1.0, duration)))
         }
-    
+		
+		
+		remove_blur_effect()
+		
         UIView.animateWithDuration(duration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { [weak self]() -> Void in
             if let strongSelf = self {
                 strongSelf.rightContainerView.frame = frame
                 strongSelf.opacityView.layer.opacity = 0.0
                 strongSelf.mainContainerView.transform = CGAffineTransformMakeScale(1.0, 1.0)
+				
             }
             }) { [weak self](Bool) -> Void in
                 if let strongSelf = self {
@@ -708,11 +729,11 @@ public class SlideMenuController: UIViewController, UIGestureRecognizerDelegate 
     }
     
     private func addShadowToView(targetContainerView: UIView) {
-        targetContainerView.layer.masksToBounds = false
-        targetContainerView.layer.shadowOffset = SlideMenuOptions.shadowOffset
-        targetContainerView.layer.shadowOpacity = Float(SlideMenuOptions.shadowOpacity)
-        targetContainerView.layer.shadowRadius = SlideMenuOptions.shadowRadius
-        targetContainerView.layer.shadowPath = UIBezierPath(rect: targetContainerView.bounds).CGPath
+//        targetContainerView.layer.masksToBounds = false
+//        targetContainerView.layer.shadowOffset = SlideMenuOptions.shadowOffset
+//        targetContainerView.layer.shadowOpacity = Float(SlideMenuOptions.shadowOpacity)
+//        targetContainerView.layer.shadowRadius = SlideMenuOptions.shadowRadius
+//        targetContainerView.layer.shadowPath = UIBezierPath(rect: targetContainerView.bounds).CGPath
     }
     
     private func removeShadow(targetContainerView: UIView) {
@@ -854,6 +875,30 @@ public class SlideMenuController: UIViewController, UIGestureRecognizerDelegate 
     private func isPointContainedWithinRightRect(point: CGPoint) -> Bool {
         return CGRectContainsPoint(rightContainerView.frame, point)
     }
+	
+	
+	
+	
+// MARK: - Blur Effect
+	// 我自己写着玩的，必要的时候把下面几个 function 删掉
+	let effView = UIVisualEffectView(effect: UIBlurEffect(style: .ExtraLight))
+	
+	private func add_blur_at_frame(frame: CGRect, _ duration: NSTimeInterval) {
+		
+		effView.removeFromSuperview()
+		self.view.insertSubview(effView, atIndex: 1)
+		effView.frame = CGRectZero
+		
+		UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations: {
+			self.effView.frame = frame
+			
+			}, completion: {_ in
+		})
+	}
+	
+	private func remove_blur_effect() {
+		effView.removeFromSuperview()
+	}
     
 }
 
@@ -915,6 +960,8 @@ extension UIViewController {
 //            }
 //        }
     }
+	
+
 }
 
 

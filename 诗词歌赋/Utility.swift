@@ -10,7 +10,7 @@ import UIKit
 
 
 // UIView.alpha
-let TEXT_VIEW_TRANSPARENCY:CGFloat = 0.73
+let TEXT_VIEW_TRANSPARENCY:CGFloat = 0.8
 
 // Background Images names
 // 这些图片名称是用 "$ ls > file.txt"  外加 python 导出的

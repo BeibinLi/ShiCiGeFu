@@ -15,19 +15,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	
 	var backgroundImageView = UIImageView()
 	var scrollView = UIScrollView()
-
 	
     @IBOutlet var table: UITableView!
 	@IBOutlet var next_button: UIButton!
-	
-	
 	
     var lines = [String]()
     var poet:PoetModel?
 	
 	static var used_images = [String]()
-	
-	
 
 	
 // MARK: - UIViewController Functions
@@ -43,35 +38,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		table.backgroundColor = .grayColor()
 		table.estimatedRowHeight = 44.0 // 44 is the default. call this line to enable autolayout
 		
-//		let effect = UIBlurEffect(style: .Light)
-//		let effectView = UIVisualEffectView(effect: effect)
-//		effectView.frame = self.view.bounds
-//		self.view.insertSubview(effectView, atIndex: 1)
-		
-		
         load_poet( ) // load a new poet if needed
     }
-	
-	
-	func blur(view: UIView) {
-		//only apply the blur if the user hasn't disabled transparency effects
-		if !UIAccessibilityIsReduceTransparencyEnabled() {
-			view.backgroundColor = UIColor.clearColor()
-			let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-			let blurEffectView = UIVisualEffectView(effect: blurEffect)
-			blurEffectView.frame = view.bounds
-			view.addSubview(blurEffectView) //if you have more UIViews on screen, use insertSubview:belowSubview: to place it underneath the lowest view instead
-			
-			//add auto layout constraints so that the blur fills the screen upon rotating device
-			blurEffectView.translatesAutoresizingMaskIntoConstraints = false
-			view.addConstraint(NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0))
-			view.addConstraint(NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0))
-			view.addConstraint(NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0))
-			view.addConstraint(NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0))
-		} else {
-			view.backgroundColor = UIColor.blackColor()
-		}
-	}
 	
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
@@ -89,16 +57,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		do {
 			var score = self.poet!.score
 			
-			if score + 1 <= 100 {
+			if score < 0 {
+				score = 1
+			} else if score + 1 <= 100 {
 				score += 1
-				self.poet?.score  = score
-				self.poet?.setValue( score , forKey: "score")
 			}
 			
+			self.poet?.score  = score
+			self.poet?.setValue( score , forKey: "score")
+			
 			try context.save()
+			
+			UIView.addMJNotifierWithText("已加入收藏，评分为 \(score)", dismissAutomatically: true)
+
 		}catch let err{
 			print(err)
 		}
+		
+		
 	}
 	
 	
@@ -116,6 +92,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 			print(err)
 		}
 		
+//		[UIView addMJNotifierWithText:@"Hey there!" dismissAutomatically:YES];
+
+		UIView.addMJNotifierWithText("这首诗词将不再随机播放", dismissAutomatically: true)
 	}
 	
 	@IBAction func next_poet(sender: AnyObject) {
@@ -266,7 +245,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		
 		UIView.animateWithDuration(2.0, delay: 0, options: .TransitionCrossDissolve, animations: {
 			self.scrollView.alpha = 1.0
-			self.scrollView.contentMode = UIViewContentMode.ScaleAspectFill
 			}, completion: {_ in
 				self.next_button.enabled = true
 		})
@@ -290,7 +268,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		let minHorizScale = scrollView.bounds.width / image.size.width
 		let minVertScale = scrollView.bounds.height / image.size.height
 		scrollView.minimumZoomScale = min(minHorizScale, minVertScale)
-		scrollView.maximumZoomScale = 1.0
+		scrollView.maximumZoomScale = 10 // magic number I tried ???
+		
 		scrollView.zoomScale = max(minHorizScale, minVertScale)
 		scrollView.contentOffset = CGPoint(
 			x: (scrollView.contentSize.width - scrollView.bounds.width) / 2,
@@ -298,17 +277,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		
 		// extension
 		setContentInsetToCenterScrollView(scrollView)
+		
+
 	}
-
-
 }
 
 
 
 extension ViewController: UIScrollViewDelegate {
+	// Extension from
+	// https://github.com/ide/UIVisualEffects
 	
 	func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
-		return scrollView.subviews.isEmpty ? nil : (scrollView.subviews[0] as! UIView)
+		return scrollView.subviews.isEmpty ? nil : (scrollView.subviews[0] as UIView)
 	}
 	
 	func scrollViewDidZoom(scrollView: UIScrollView) {

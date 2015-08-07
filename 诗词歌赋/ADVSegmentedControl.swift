@@ -28,7 +28,7 @@ import UIKit
         }
     }
     
-    @IBInspectable var selectedLabelColor : UIColor = UIColor.blackColor() {
+    @IBInspectable var selectedLabelColor : UIColor = UIColor.whiteColor() {
         didSet {
             setSelectedColors()
         }
@@ -72,7 +72,7 @@ import UIKit
     func setupView(){
         
         layer.cornerRadius = frame.height / 2
-        layer.borderColor = UIColor.blueColor().CGColor
+        layer.borderColor = UIColor.whiteColor().CGColor
         layer.borderWidth = 2
         
         backgroundColor = UIColor.clearColor()

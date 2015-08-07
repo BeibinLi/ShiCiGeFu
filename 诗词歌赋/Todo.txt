@@ -3,13 +3,14 @@
 - Apple Watch 优化
 - 字体选择
 - Notification Center , 类似 “格言” app
-- like 按键设置，反馈
 
 
 
 下一个版本
 - 简体、繁体 切换
+- SlideMenuController 的 bug，当用户同时点 左右两个按钮，出 bug
 - 收藏菜单
+- 图片 Blur + Vibrancy 效果
 - 显示诗词的 filter 功能
 - 显示所有诗词的时候，要给用户选择 排序方式，和filter
 - 网络评论
@@ -27,5 +28,6 @@ Done:
 - 随机图片
 - Table View 显示行的时候，爆了分成两行啊。
 - 笔记界面
+- like 按键设置，反馈
 
 

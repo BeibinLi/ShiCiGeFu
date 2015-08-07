@@ -20,22 +20,7 @@ class AllPoetTableVC: UIViewController, UITableViewDataSource, UITableViewDelega
 	var navigationViewController: UIViewController?
 	@IBOutlet var segmentControl: ADVSegmentedControl!
 	
-	func segmentValueChanged(sender: AnyObject?){
-		let choice = segmentControl.selectedIndex
-		
-		switch choice {
-		case 0:
-			self.poets.sortInPlace({ self.chinese_compare( $0.title, $1.title) })
-		case 1:
-			self.poets.sortInPlace({ self.chinese_compare( $0.author, $1.author) })
-		case 2:
-			self.poets.sortInPlace({ self.chinese_compare( $0.context, $1.context) })
-		default:
-			print("Error! the selected index is \(choice)")
-		}
-		
-		table.reloadData()
-	}
+
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -43,10 +28,16 @@ class AllPoetTableVC: UIViewController, UITableViewDataSource, UITableViewDelega
 		table.registerClass(UITableViewCell.self, forCellReuseIdentifier: "PoetCell");
 		table.dataSource = self
 		table.delegate = self
+		table.backgroundColor = .clearColor()
+		
 		
 		
 		segmentControl.items = ["诗名排序", "诗人排序", "内容排序"]
 		segmentControl.font = UIFont(name: "Avenir-Black", size: 13)
+		segmentControl.unselectedLabelColor = .lightGrayColor()
+		segmentControl.selectedLabelColor = .whiteColor()
+		segmentControl.borderColor = .whiteColor()
+		segmentControl.thumbColor = .orangeColor()
 		segmentControl.selectedIndex = 1
 		segmentControl.addTarget(self, action: "segmentValueChanged:", forControlEvents: .ValueChanged)
 		
@@ -110,16 +101,23 @@ class AllPoetTableVC: UIViewController, UITableViewDataSource, UITableViewDelega
 		
 		let poet = poets[indexPath.row] as PoetModel
 		
+		if poet.score > 0 {
+			cell!.textLabel!.text = String( poet.title + "♥️" )
+		}else if poet.score < 0 {
+			cell!.textLabel!.text = String( poet.title + "💔" )
+		} else {
+			cell!.textLabel!.text = poet.title // set the cell title
+		}
 		
 		
-		cell!.textLabel!.text = poet.title // set the cell title
 		cell!.textLabel!.textAlignment = NSTextAlignment.Left
-		
-		
 		cell!.textLabel!.textColor = UIColor.blackColor()
 		cell!.textLabel!.backgroundColor = UIColor.clearColor()
 		cell!.backgroundColor = .clearColor()
 		cell!.textLabel!.font = UIFont(name: "Helvetica", size: 18)
+		
+		
+		cell!.textLabel!.textColor = .whiteColor()
 		
 		cell!.detailTextLabel?.text = poet.author
 		
@@ -129,6 +127,27 @@ class AllPoetTableVC: UIViewController, UITableViewDataSource, UITableViewDelega
 	func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
 		// Return false iff you do not want the specified item to be editable.
 		return false
+	}
+	
+	
+
+// MARK: - Segment Control
+	
+	func segmentValueChanged(sender: AnyObject?){
+		let choice = segmentControl.selectedIndex
+		
+		switch choice {
+		case 0:
+			self.poets.sortInPlace({ self.chinese_compare( $0.title, $1.title) })
+		case 1:
+			self.poets.sortInPlace({ self.chinese_compare( $0.author, $1.author) })
+		case 2:
+			self.poets.sortInPlace({ self.chinese_compare( $0.context, $1.context) })
+		default:
+			print("Error! the selected index is \(choice)")
+		}
+		
+		table.reloadData()
 	}
 	
 	

@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -27,6 +29,8 @@
                                 <rect key="frame" x="0.0" y="68" width="600" height="532"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PoetCell" textLabel="UVD-Pc-CLN" detailTextLabel="4Ck-I6-0Vs" style="IBUITableViewCellStyleValue1" id="eeA-ZX-sfB">
                                         <rect key="frame" x="0.0" y="22" width="600" height="44"/>
@@ -39,6 +43,7 @@
                                                     <rect key="frame" x="15" y="12" width="31.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -47,28 +52,31 @@
                                                     <rect key="frame" x="529" y="12" width="56" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZe-O3-NAp" customClass="ADVSegmentedControl" customModule="诗词歌赋" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="560" height="40"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="tjq-xZ-4Vj"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DBG-4m-Qdf" firstAttribute="bottom" secondItem="Y5z-Sk-JXP" secondAttribute="top" id="0zK-HD-ZIU"/>
                             <constraint firstItem="OZe-O3-NAp" firstAttribute="leading" secondItem="GuB-YX-GkM" secondAttribute="leadingMargin" id="N9K-IP-mwg"/>
@@ -103,23 +111,27 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6e-P0-7gb">
                                 <rect key="frame" x="20" y="20" width="30" height="30"/>
                                 <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="设置"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYh-53-cjk">
                                 <rect key="frame" x="550" y="20" width="30" height="30"/>
                                 <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="更多"/>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="笔记 UITextView 在此" translatesAutoresizingMaskIntoConstraints="NO" id="MEB-Bq-2ex">
                                 <rect key="frame" x="20" y="58" width="560" height="522"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uYh-53-cjk" firstAttribute="trailing" secondItem="8NB-Fy-tOa" secondAttribute="trailingMargin" id="3x4-XX-bx0"/>
                             <constraint firstItem="MEB-Bq-2ex" firstAttribute="trailing" secondItem="uYh-53-cjk" secondAttribute="trailing" id="66L-DL-oal"/>
@@ -152,32 +164,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugj-NC-VYE">
-                                <rect key="frame" x="20" y="562" width="30" height="30"/>
+                                <rect key="frame" x="20" y="530" width="50" height="50"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="💔"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="PGj-wJ-jBQ"/>
+                                    <constraint firstAttribute="width" constant="50" id="hR6-wa-ryF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="💔">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="dislike_button_pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yaH-w1-bKZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASv-lS-Qi7">
-                                <rect key="frame" x="550" y="562" width="30" height="30"/>
-                                <animations/>
-                                <state key="normal" title="➡︎"/>
-                                <connections>
-                                    <action selector="next_poet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0om-68-gUb"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6r5-B4-4Rh">
-                                <rect key="frame" x="285" y="562" width="30" height="30"/>
+                                <rect key="frame" x="275" y="530" width="50" height="50"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="oRY-oQ-UjI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="♥️"/>
                                 <connections>
                                     <action selector="like_button_pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vtB-Oo-rRu"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Frb-5k-Ppk">
-                                <rect key="frame" x="20" y="72" width="560" height="482"/>
+                                <rect key="frame" x="20" y="72" width="560" height="450"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -209,20 +223,38 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="U6G-bs-Irx"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASv-lS-Qi7">
+                                <rect key="frame" x="530" y="530" width="50" height="50"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="I0Q-cX-Q0z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="➡︎">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="next_poet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0om-68-gUb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ugj-NC-VYE" secondAttribute="bottom" constant="8" symbolic="YES" id="2Bp-BD-ws7"/>
-                            <constraint firstItem="ASv-lS-Qi7" firstAttribute="baseline" secondItem="6r5-B4-4Rh" secondAttribute="baseline" id="Hky-eK-wgt"/>
-                            <constraint firstItem="ASv-lS-Qi7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="NUD-rG-fLC"/>
-                            <constraint firstItem="Ugj-NC-VYE" firstAttribute="top" secondItem="Frb-5k-Ppk" secondAttribute="bottom" constant="8" symbolic="YES" id="NmR-C1-7op"/>
-                            <constraint firstItem="6r5-B4-4Rh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ROo-Hy-Cff"/>
-                            <constraint firstItem="Frb-5k-Ppk" firstAttribute="trailing" secondItem="ASv-lS-Qi7" secondAttribute="trailing" id="cVi-Df-fu0"/>
-                            <constraint firstItem="Ugj-NC-VYE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="guA-b9-J4p"/>
-                            <constraint firstItem="Frb-5k-Ppk" firstAttribute="leading" secondItem="Ugj-NC-VYE" secondAttribute="leading" id="hw2-mb-PKq"/>
-                            <constraint firstItem="Frb-5k-Ppk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="72" id="lYN-dq-LH2"/>
-                            <constraint firstItem="Ugj-NC-VYE" firstAttribute="baseline" secondItem="6r5-B4-4Rh" secondAttribute="baseline" id="rjn-Og-XZz"/>
+                            <constraint firstItem="6r5-B4-4Rh" firstAttribute="baseline" secondItem="Ugj-NC-VYE" secondAttribute="firstBaseline" id="7Sx-ZQ-lEI"/>
+                            <constraint firstItem="ASv-lS-Qi7" firstAttribute="top" secondItem="6r5-B4-4Rh" secondAttribute="top" id="9Xg-Ml-UQJ"/>
+                            <constraint firstItem="Ugj-NC-VYE" firstAttribute="baseline" secondItem="6r5-B4-4Rh" secondAttribute="firstBaseline" id="Af3-bn-lF3"/>
+                            <constraint firstItem="6r5-B4-4Rh" firstAttribute="top" secondItem="Ugj-NC-VYE" secondAttribute="top" id="BHS-4C-OS3"/>
+                            <constraint firstItem="6r5-B4-4Rh" firstAttribute="baseline" secondItem="ASv-lS-Qi7" secondAttribute="baseline" id="Cz3-PA-dKK"/>
+                            <constraint firstItem="Frb-5k-Ppk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Gmq-fE-PgG"/>
+                            <constraint firstAttribute="bottom" secondItem="Ugj-NC-VYE" secondAttribute="bottom" constant="20" id="Tqg-Yt-1nR"/>
+                            <constraint firstItem="Frb-5k-Ppk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="UJ6-pK-wj4"/>
+                            <constraint firstItem="Frb-5k-Ppk" firstAttribute="leading" secondItem="Ugj-NC-VYE" secondAttribute="leading" id="V8y-P7-N2l"/>
+                            <constraint firstItem="6r5-B4-4Rh" firstAttribute="centerX" secondItem="Frb-5k-Ppk" secondAttribute="centerX" id="W0F-bz-4Rv"/>
+                            <constraint firstItem="Ugj-NC-VYE" firstAttribute="top" secondItem="Frb-5k-Ppk" secondAttribute="bottom" constant="8" symbolic="YES" id="aaZ-2L-A07"/>
+                            <constraint firstItem="ASv-lS-Qi7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="h22-ZJ-MHa"/>
+                            <constraint firstItem="6r5-B4-4Rh" firstAttribute="baseline" secondItem="ASv-lS-Qi7" secondAttribute="firstBaseline" id="uOv-KY-4fe"/>
+                            <constraint firstItem="Frb-5k-Ppk" firstAttribute="trailing" secondItem="ASv-lS-Qi7" secondAttribute="trailing" id="vF1-wR-uDH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gcw-PU-EC6"/>
