@@ -198,7 +198,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		lines.append( self.poet!.title )
 		lines.append( self.poet!.author )
 		
-		let context_array = split( self.poet!.context.characters)
+		let context_array = self.poet!.context.characters.split
 			{   (c:Character)->Bool in
 				return c=="，" || c == "。" || c == "？" || c == "！" }.map(String.init)
 		

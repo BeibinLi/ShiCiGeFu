@@ -10,11 +10,13 @@
 		2404DBE11B5ECD09009257D6 /* STXINGKA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2404DBE01B5ECD09009257D6 /* STXINGKA.ttf */; };
 		2404DBE31B5ECDD9009257D6 /* STXINWEI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2404DBE21B5ECDD9009257D6 /* STXINWEI.ttf */; };
 		2404DBEE1B5F3A6B009257D6 /* Poets.json in Resources */ = {isa = PBXBuildFile; fileRef = 2404DBED1B5F3A6B009257D6 /* Poets.json */; };
+		241404251B812379008DD7BC /* PoetDM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 241404231B812379008DD7BC /* PoetDM.xcdatamodeld */; };
 		241A88921B5EC23600562231 /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A88911B5EC23600562231 /* FontHelper.swift */; };
+		2421B90D1B89181000EAA07C /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2421B90C1B89181000EAA07C /* PhotoModel.swift */; };
+		2421B90F1B89181800EAA07C /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2421B90E1B89181800EAA07C /* CommentModel.swift */; };
 		243A57911B72547D00D09D19 /* UIView+MJAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 243A57901B72547D00D09D19 /* UIView+MJAlertView.m */; };
 		2442E6D31B521BBF008D4CD6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24C7C07B1B51975F00AF6C05 /* Interface.storyboard */; };
 		2442E6D41B521BC6008D4CD6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24C7C07B1B51975F00AF6C05 /* Interface.storyboard */; };
-		2442E6D91B5223BB008D4CD6 /* PoetDM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2442E6D71B5223BB008D4CD6 /* PoetDM.xcdatamodeld */; };
 		245F1EFE1B69E1EE0045EFFB /* ADVSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245F1EFD1B69E1EE0045EFFB /* ADVSegmentedControl.swift */; };
 		249BA75D1B62CA1E003F3719 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BA75C1B62CA1E003F3719 /* SlideMenuController.swift */; };
 		249BA75F1B62CC0D003F3719 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BA75E1B62CC0D003F3719 /* RightViewController.swift */; };
@@ -103,10 +105,12 @@
 		2404DBE01B5ECD09009257D6 /* STXINGKA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STXINGKA.ttf; sourceTree = "<group>"; };
 		2404DBE21B5ECDD9009257D6 /* STXINWEI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STXINWEI.ttf; sourceTree = "<group>"; };
 		2404DBED1B5F3A6B009257D6 /* Poets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Poets.json; sourceTree = "<group>"; };
+		241404241B812379008DD7BC /* PoetDM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PoetDM.xcdatamodel; sourceTree = "<group>"; };
 		241A88911B5EC23600562231 /* FontHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
+		2421B90C1B89181000EAA07C /* PhotoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		2421B90E1B89181800EAA07C /* CommentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		243A578F1B72547D00D09D19 /* UIView+MJAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJAlertView.h"; sourceTree = "<group>"; };
 		243A57901B72547D00D09D19 /* UIView+MJAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJAlertView.m"; sourceTree = "<group>"; };
-		2442E6D81B5223BB008D4CD6 /* PoetDM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PoetDM.xcdatamodel; sourceTree = "<group>"; };
 		245F1EFD1B69E1EE0045EFFB /* ADVSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADVSegmentedControl.swift; sourceTree = "<group>"; };
 		249BA75C1B62CA1E003F3719 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		249BA75E1B62CC0D003F3719 /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
@@ -191,8 +195,10 @@
 		24C6C1B01B5437C600EA49D6 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				241404231B812379008DD7BC /* PoetDM.xcdatamodeld */,
+				2421B90C1B89181000EAA07C /* PhotoModel.swift */,
+				2421B90E1B89181800EAA07C /* CommentModel.swift */,
 				24BAAF9A1B52FB73006B6410 /* DBLoadHelper.swift */,
-				2442E6D71B5223BB008D4CD6 /* PoetDM.xcdatamodeld */,
 				2404DBED1B5F3A6B009257D6 /* Poets.json */,
 				24BAAF9C1B52FBA3006B6410 /* PoetModel.swift */,
 				24C6C1AE1B5437B400EA49D6 /* AuthorModel.swift */,
@@ -504,9 +510,11 @@
 				24C6C18A1B53061A00EA49D6 /* library_extension.swift in Sources */,
 				24D3721B1B58327000D5F2B0 /* AllPoetTableVC.swift in Sources */,
 				241A88921B5EC23600562231 /* FontHelper.swift in Sources */,
-				2442E6D91B5223BB008D4CD6 /* PoetDM.xcdatamodeld in Sources */,
+				2421B90D1B89181000EAA07C /* PhotoModel.swift in Sources */,
 				24B97E721B62FA8A00A6065A /* Utility.swift in Sources */,
+				241404251B812379008DD7BC /* PoetDM.xcdatamodeld in Sources */,
 				243A57911B72547D00D09D19 /* UIView+MJAlertView.m in Sources */,
+				2421B90F1B89181800EAA07C /* CommentModel.swift in Sources */,
 				24C7C0521B51975F00AF6C05 /* AppDelegate.swift in Sources */,
 				24BAAF9B1B52FB73006B6410 /* DBLoadHelper.swift in Sources */,
 				24BAAF9D1B52FBA3006B6410 /* PoetModel.swift in Sources */,
@@ -883,12 +891,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2442E6D71B5223BB008D4CD6 /* PoetDM.xcdatamodeld */ = {
+		241404231B812379008DD7BC /* PoetDM.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2442E6D81B5223BB008D4CD6 /* PoetDM.xcdatamodel */,
+				241404241B812379008DD7BC /* PoetDM.xcdatamodel */,
 			);
-			currentVersion = 2442E6D81B5223BB008D4CD6 /* PoetDM.xcdatamodel */;
+			currentVersion = 241404241B812379008DD7BC /* PoetDM.xcdatamodel */;
 			path = PoetDM.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

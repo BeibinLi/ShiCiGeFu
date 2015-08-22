@@ -246,11 +246,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x8bd7;&#x8bcd;&#x6b4c;&#x8d4b;/AppDelegate.swift"
-            timestampString = "460477867.105518"
+            timestampString = "461968526.834182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "load_introduction(_:)"
             landmarkType = "5">
          </BreakpointContent>

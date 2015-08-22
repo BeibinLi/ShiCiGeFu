@@ -79,7 +79,7 @@ func * (left:Int, right:String) -> String {
     for _ in 1...left {
         rst += right
     }
-    
+	
     return rst
 }
 
@@ -90,7 +90,7 @@ func * (inout left: String, right: Int) -> String {
 extension Array {
 	
 	// return a random element from the array
-	func rand() -> T {
+	func rand() -> Element {
 		let n = self.count
 		assert( n > 0, "ERROR: the array is empty!")
 		let x = Int( arc4random() ) % n

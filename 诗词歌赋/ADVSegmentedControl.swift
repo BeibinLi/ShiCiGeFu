@@ -63,12 +63,12 @@ import UIKit
         
         setupView()
     }
-    
-    required init(coder: NSCoder) {
+	
+    required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupView()
     }
-    
+	
     func setupView(){
         
         layer.cornerRadius = frame.height / 2
@@ -160,8 +160,8 @@ import UIKit
     
     func addIndividualItemConstraints(items: [UIView], mainView: UIView, padding: CGFloat) {
         
-        let constraints = mainView.constraints
-        
+//        let constraints = mainView.constraints
+		
         for (index, button) in items.enumerate() {
             
             let topConstraint = NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: mainView, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 0)

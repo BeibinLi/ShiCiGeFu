@@ -11,9 +11,12 @@ import CoreData
 
 @objc(AuthorModel)
 class AuthorModel : NSManagedObject {
-    @NSManaged var name:String
+    @NSManaged var name:String?
+	@NSManaged var story:String?
+	@NSManaged var year:String?
 
-    
+	
+	@NSManaged var score:Int
 }
 
 

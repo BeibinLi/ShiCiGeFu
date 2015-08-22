@@ -94,9 +94,6 @@ class RMParallax : UIViewController, UIScrollViewDelegate {
 		// 用 Translucent 的 NavigationBar，再对 button 或者 textView  用 autolayout 可能可以解决这个问题。
 		
         self.parentViewController?.navigationController?.navigationBar.hidden = true
-		
-//		self.parentViewController?.navigationController?.setToolbarHidden(true, animated: true)
-		
         self.setupRMParallax()
     }
     
@@ -188,8 +185,6 @@ class RMParallax : UIViewController, UIScrollViewDelegate {
         self.completionHandler()
 		
         self.parentViewController?.navigationController?.navigationBar.hidden = false
-		
-//		self.parentViewController?.navigationController?.setToolbarHidden(false, animated: true)
     }
     
     // MARK : UIScrollViewDelegate

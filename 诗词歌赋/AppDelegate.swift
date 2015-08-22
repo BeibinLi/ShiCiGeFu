@@ -66,21 +66,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		
 		// delete the random part
-		let introduction = "introduction_0.1" // + String(arc4random())
+		let introduction = "introduction_0.1"  + String(arc4random())
 		
 		
 		if( !NSUserDefaults.standardUserDefaults().boolForKey(introduction) ) {
 			print("Loading data from .txt file ... ")
 			
-			let item1 = RMParallaxItem(image: UIImage(named: "img1")!, text: "随时感悟诗词歌赋")
-			let item2 = RMParallaxItem(image: UIImage(named: "img2")!, text: "用心体会世间万物")
-			let item3 = RMParallaxItem(image: UIImage(named: "img3")!, text: "让灵魂跟上肉体的步伐")
-			let item4 = RMParallaxItem(image: UIImage(named: "img4")!, text: "让经典与您随影随行")
+			let item1 = RMParallaxItem(image: UIImage(named: "img1")!, text: "感悟诗词歌赋")
+			let item2 = RMParallaxItem(image: UIImage(named: "img2")!, text: "体会世间万物")
+			let item3 = RMParallaxItem(image: UIImage(named: "img3")!, text: "品尝历史深沉")
+			let item4 = RMParallaxItem(image: UIImage(named: "img4")!, text: "让经典与您如影随行")
 			
 			let rmParallaxViewController = RMParallax(items: [item1, item2, item3, item4], motion: false)
 			rmParallaxViewController.completionHandler = {
 				UIView.animateWithDuration(0.4, animations: { () -> Void in
-					rmParallaxViewController.view.alpha = 0.0
+					rmParallaxViewController.view.alpha = 0.0 // set the introduction view disappear
+					
+					// get the next poet, so poet's tableview is not wierd
+					let vc_cast = vc as? ViewController
+					vc_cast?.next_poet(vc)
 				})
 			}
 			
@@ -92,6 +96,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			// Override the syntax
 			NSUserDefaults.standardUserDefaults().setBool(true, forKey: introduction)
 			NSUserDefaults.standardUserDefaults().synchronize();
+
 		}
 		
 	}
@@ -103,7 +108,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		// Load the databse before even launching the ViewController. Otherwise, the database would be empty
 		load_db_in_frist_launch()
-		
+
 		createMenuView()
         return true
     }
