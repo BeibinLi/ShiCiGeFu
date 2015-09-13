@@ -66,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		
 		// delete the random part
-		let introduction = "introduction_0.1"  + String(arc4random())
+		let introduction = "introduction_0.1"  // + String( arc4random_uniform( UInt32(INT32_MAX) ) )
 		
 		
 		if( !NSUserDefaults.standardUserDefaults().boolForKey(introduction) ) {

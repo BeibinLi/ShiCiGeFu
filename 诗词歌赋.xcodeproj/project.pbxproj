@@ -7,16 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2404DBE11B5ECD09009257D6 /* STXINGKA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2404DBE01B5ECD09009257D6 /* STXINGKA.ttf */; };
-		2404DBE31B5ECDD9009257D6 /* STXINWEI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2404DBE21B5ECDD9009257D6 /* STXINWEI.ttf */; };
 		2404DBEE1B5F3A6B009257D6 /* Poets.json in Resources */ = {isa = PBXBuildFile; fileRef = 2404DBED1B5F3A6B009257D6 /* Poets.json */; };
 		241404251B812379008DD7BC /* PoetDM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 241404231B812379008DD7BC /* PoetDM.xcdatamodeld */; };
 		241A88921B5EC23600562231 /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A88911B5EC23600562231 /* FontHelper.swift */; };
 		2421B90D1B89181000EAA07C /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2421B90C1B89181000EAA07C /* PhotoModel.swift */; };
 		2421B90F1B89181800EAA07C /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2421B90E1B89181800EAA07C /* CommentModel.swift */; };
 		243A57911B72547D00D09D19 /* UIView+MJAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 243A57901B72547D00D09D19 /* UIView+MJAlertView.m */; };
-		2442E6D31B521BBF008D4CD6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24C7C07B1B51975F00AF6C05 /* Interface.storyboard */; };
-		2442E6D41B521BC6008D4CD6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24C7C07B1B51975F00AF6C05 /* Interface.storyboard */; };
 		245F1EFE1B69E1EE0045EFFB /* ADVSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245F1EFD1B69E1EE0045EFFB /* ADVSegmentedControl.swift */; };
 		249BA75D1B62CA1E003F3719 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BA75C1B62CA1E003F3719 /* SlideMenuController.swift */; };
 		249BA75F1B62CC0D003F3719 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BA75E1B62CC0D003F3719 /* RightViewController.swift */; };
@@ -34,13 +30,7 @@
 		24C7C05C1B51975F00AF6C05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24C7C05A1B51975F00AF6C05 /* LaunchScreen.storyboard */; };
 		24C7C0671B51975F00AF6C05 /* ____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7C0661B51975F00AF6C05 /* ____Tests.swift */; };
 		24C7C0721B51975F00AF6C05 /* ____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7C0711B51975F00AF6C05 /* ____UITests.swift */; };
-		24C7C0771B51975F00AF6C05 /* 诗词歌赋 WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 24C7C0761B51975F00AF6C05 /* 诗词歌赋 WatchKit App.app */; };
-		24C7C07F1B51975F00AF6C05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C7C07E1B51975F00AF6C05 /* Assets.xcassets */; };
 		24C7C0861B51975F00AF6C05 /* 诗词歌赋 WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 24C7C0851B51975F00AF6C05 /* 诗词歌赋 WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		24C7C08B1B51975F00AF6C05 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7C08A1B51975F00AF6C05 /* InterfaceController.swift */; };
-		24C7C08D1B51975F00AF6C05 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7C08C1B51975F00AF6C05 /* ExtensionDelegate.swift */; };
-		24C7C08F1B51975F00AF6C05 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7C08E1B51975F00AF6C05 /* GlanceController.swift */; };
-		24C7C0911B51975F00AF6C05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C7C0901B51975F00AF6C05 /* Assets.xcassets */; };
 		24D3721B1B58327000D5F2B0 /* AllPoetTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D3721A1B58327000D5F2B0 /* AllPoetTableVC.swift */; };
 		24D3721D1B58449100D5F2B0 /* Todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 24D3721C1B58449100D5F2B0 /* Todo.txt */; };
 /* End PBXBuildFile section */
@@ -59,13 +49,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 24C7C04D1B51975F00AF6C05;
 			remoteInfo = "诗词歌赋";
-		};
-		24C7C0781B51975F00AF6C05 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 24C7C0461B51975F00AF6C05 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 24C7C0751B51975F00AF6C05;
-			remoteInfo = "诗词歌赋 WatchKit App";
 		};
 		24C7C0871B51975F00AF6C05 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -88,22 +71,9 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		24C7C09C1B51975F00AF6C05 /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
-			files = (
-				24C7C0771B51975F00AF6C05 /* 诗词歌赋 WatchKit App.app in Embed Watch Content */,
-			);
-			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2404DBE01B5ECD09009257D6 /* STXINGKA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STXINGKA.ttf; sourceTree = "<group>"; };
-		2404DBE21B5ECDD9009257D6 /* STXINWEI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STXINWEI.ttf; sourceTree = "<group>"; };
 		2404DBED1B5F3A6B009257D6 /* Poets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Poets.json; sourceTree = "<group>"; };
 		241404241B812379008DD7BC /* PoetDM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PoetDM.xcdatamodel; sourceTree = "<group>"; };
 		241A88911B5EC23600562231 /* FontHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
@@ -136,15 +106,7 @@
 		24C7C0711B51975F00AF6C05 /* ____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "____UITests.swift"; sourceTree = "<group>"; };
 		24C7C0731B51975F00AF6C05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24C7C0761B51975F00AF6C05 /* 诗词歌赋 WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "诗词歌赋 WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		24C7C07C1B51975F00AF6C05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		24C7C07E1B51975F00AF6C05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		24C7C0801B51975F00AF6C05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24C7C0851B51975F00AF6C05 /* 诗词歌赋 WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "诗词歌赋 WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		24C7C08A1B51975F00AF6C05 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		24C7C08C1B51975F00AF6C05 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		24C7C08E1B51975F00AF6C05 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
-		24C7C0901B51975F00AF6C05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		24C7C0921B51975F00AF6C05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24D3721A1B58327000D5F2B0 /* AllPoetTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllPoetTableVC.swift; sourceTree = "<group>"; };
 		24D3721C1B58449100D5F2B0 /* Todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,8 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				241A88911B5EC23600562231 /* FontHelper.swift */,
-				2404DBE01B5ECD09009257D6 /* STXINGKA.ttf */,
-				2404DBE21B5ECDD9009257D6 /* STXINWEI.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -225,8 +185,6 @@
 				24C7C0501B51975F00AF6C05 /* 诗词歌赋 */,
 				24C7C0651B51975F00AF6C05 /* 诗词歌赋Tests */,
 				24C7C0701B51975F00AF6C05 /* 诗词歌赋UITests */,
-				24C7C07A1B51975F00AF6C05 /* 诗词歌赋 WatchKit App */,
-				24C7C0891B51975F00AF6C05 /* 诗词歌赋 WatchKit Extension */,
 				24C7C04F1B51975F00AF6C05 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -283,28 +241,6 @@
 			path = "诗词歌赋UITests";
 			sourceTree = "<group>";
 		};
-		24C7C07A1B51975F00AF6C05 /* 诗词歌赋 WatchKit App */ = {
-			isa = PBXGroup;
-			children = (
-				24C7C07B1B51975F00AF6C05 /* Interface.storyboard */,
-				24C7C07E1B51975F00AF6C05 /* Assets.xcassets */,
-				24C7C0801B51975F00AF6C05 /* Info.plist */,
-			);
-			path = "诗词歌赋 WatchKit App";
-			sourceTree = "<group>";
-		};
-		24C7C0891B51975F00AF6C05 /* 诗词歌赋 WatchKit Extension */ = {
-			isa = PBXGroup;
-			children = (
-				24C7C08A1B51975F00AF6C05 /* InterfaceController.swift */,
-				24C7C08C1B51975F00AF6C05 /* ExtensionDelegate.swift */,
-				24C7C08E1B51975F00AF6C05 /* GlanceController.swift */,
-				24C7C0901B51975F00AF6C05 /* Assets.xcassets */,
-				24C7C0921B51975F00AF6C05 /* Info.plist */,
-			);
-			path = "诗词歌赋 WatchKit Extension";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -315,12 +251,10 @@
 				24C7C04A1B51975F00AF6C05 /* Sources */,
 				24C7C04B1B51975F00AF6C05 /* Frameworks */,
 				24C7C04C1B51975F00AF6C05 /* Resources */,
-				24C7C09C1B51975F00AF6C05 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				24C7C0791B51975F00AF6C05 /* PBXTargetDependency */,
 			);
 			name = "诗词歌赋";
 			productName = "诗词歌赋";
@@ -456,9 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24C7C05C1B51975F00AF6C05 /* LaunchScreen.storyboard in Resources */,
-				2404DBE11B5ECD09009257D6 /* STXINGKA.ttf in Resources */,
 				24C7C0591B51975F00AF6C05 /* Assets.xcassets in Resources */,
-				2404DBE31B5ECDD9009257D6 /* STXINWEI.ttf in Resources */,
 				24C7C0571B51975F00AF6C05 /* Main.storyboard in Resources */,
 				2404DBEE1B5F3A6B009257D6 /* Poets.json in Resources */,
 				24D3721D1B58449100D5F2B0 /* Todo.txt in Resources */,
@@ -483,8 +415,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2442E6D41B521BC6008D4CD6 /* Interface.storyboard in Resources */,
-				24C7C07F1B51975F00AF6C05 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,8 +422,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2442E6D31B521BBF008D4CD6 /* Interface.storyboard in Resources */,
-				24C7C0911B51975F00AF6C05 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,9 +472,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24C7C08D1B51975F00AF6C05 /* ExtensionDelegate.swift in Sources */,
-				24C7C08B1B51975F00AF6C05 /* InterfaceController.swift in Sources */,
-				24C7C08F1B51975F00AF6C05 /* GlanceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,11 +487,6 @@
 			isa = PBXTargetDependency;
 			target = 24C7C04D1B51975F00AF6C05 /* 诗词歌赋 */;
 			targetProxy = 24C7C06E1B51975F00AF6C05 /* PBXContainerItemProxy */;
-		};
-		24C7C0791B51975F00AF6C05 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 24C7C0751B51975F00AF6C05 /* 诗词歌赋 WatchKit App */;
-			targetProxy = 24C7C0781B51975F00AF6C05 /* PBXContainerItemProxy */;
 		};
 		24C7C0881B51975F00AF6C05 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -590,14 +510,6 @@
 				24C7C05B1B51975F00AF6C05 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		24C7C07B1B51975F00AF6C05 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				24C7C07C1B51975F00AF6C05 /* Base */,
-			);
-			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -639,50 +551,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
-		};
-		24C7C0941B51975F00AF6C05 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
 		};
 		24C7C0961B51975F00AF6C05 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -701,7 +576,163 @@
 			};
 			name = Debug;
 		};
-		24C7C0971B51975F00AF6C05 /* Release */ = {
+		24C7C09A1B51975F00AF6C05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				IBSC_MODULE = "_____WatchKit_Extension";
+				INFOPLIST_FILE = "诗词歌赋 WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "U-of-M.----.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		24C7C09E1B51975F00AF6C05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "诗词歌赋/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ShiciGeFu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "诗词歌赋/诗词歌赋-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		24C7C0A11B51975F00AF6C05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "诗词歌赋Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "U-of-M.----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/诗词歌赋.app/诗词歌赋";
+			};
+			name = Debug;
+		};
+		24C7C0A41B51975F00AF6C05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "诗词歌赋UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "U-of-M.----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "诗词歌赋";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		24DE0A8A1BA58B5E00DAFF57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Release;
+		};
+		24DE0A8B1BA58B5E00DAFF57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "诗词歌赋/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ShiciGeFu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "诗词歌赋/诗词歌赋-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Release;
+		};
+		24DE0A8C1BA58B5E00DAFF57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "诗词歌赋Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "U-of-M.----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/诗词歌赋.app/诗词歌赋";
+			};
+			name = Release;
+		};
+		24DE0A8D1BA58B5E00DAFF57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "诗词歌赋UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "U-of-M.----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "诗词歌赋";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+		24DE0A8E1BA58B5E00DAFF57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				IBSC_MODULE = "_____WatchKit_Extension";
+				INFOPLIST_FILE = "诗词歌赋 WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "U-of-M.----.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		24DE0A8F1BA58B5E00DAFF57 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -718,119 +749,6 @@
 			};
 			name = Release;
 		};
-		24C7C09A1B51975F00AF6C05 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				IBSC_MODULE = "_____WatchKit_Extension";
-				INFOPLIST_FILE = "诗词歌赋 WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "U-of-M.----.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		24C7C09B1B51975F00AF6C05 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				IBSC_MODULE = "_____WatchKit_Extension";
-				INFOPLIST_FILE = "诗词歌赋 WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "U-of-M.----.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
-		24C7C09E1B51975F00AF6C05 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "诗词歌赋/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "U-of-M.----";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "诗词歌赋/诗词歌赋-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		24C7C09F1B51975F00AF6C05 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "诗词歌赋/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "U-of-M.----";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "诗词歌赋/诗词歌赋-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		24C7C0A11B51975F00AF6C05 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "诗词歌赋Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "U-of-M.----Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/诗词歌赋.app/诗词歌赋";
-			};
-			name = Debug;
-		};
-		24C7C0A21B51975F00AF6C05 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "诗词歌赋Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "U-of-M.----Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/诗词歌赋.app/诗词歌赋";
-			};
-			name = Release;
-		};
-		24C7C0A41B51975F00AF6C05 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "诗词歌赋UITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "U-of-M.----UITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "诗词歌赋";
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		24C7C0A51B51975F00AF6C05 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "诗词歌赋UITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "U-of-M.----UITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "诗词歌赋";
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -838,55 +756,55 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				24C7C0931B51975F00AF6C05 /* Debug */,
-				24C7C0941B51975F00AF6C05 /* Release */,
+				24DE0A8A1BA58B5E00DAFF57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		24C7C0951B51975F00AF6C05 /* Build configuration list for PBXNativeTarget "诗词歌赋 WatchKit Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				24C7C0961B51975F00AF6C05 /* Debug */,
-				24C7C0971B51975F00AF6C05 /* Release */,
+				24DE0A8F1BA58B5E00DAFF57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		24C7C0991B51975F00AF6C05 /* Build configuration list for PBXNativeTarget "诗词歌赋 WatchKit App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				24C7C09A1B51975F00AF6C05 /* Debug */,
-				24C7C09B1B51975F00AF6C05 /* Release */,
+				24DE0A8E1BA58B5E00DAFF57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		24C7C09D1B51975F00AF6C05 /* Build configuration list for PBXNativeTarget "诗词歌赋" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				24C7C09E1B51975F00AF6C05 /* Debug */,
-				24C7C09F1B51975F00AF6C05 /* Release */,
+				24DE0A8B1BA58B5E00DAFF57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		24C7C0A01B51975F00AF6C05 /* Build configuration list for PBXNativeTarget "诗词歌赋Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				24C7C0A11B51975F00AF6C05 /* Debug */,
-				24C7C0A21B51975F00AF6C05 /* Release */,
+				24DE0A8C1BA58B5E00DAFF57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		24C7C0A31B51975F00AF6C05 /* Build configuration list for PBXNativeTarget "诗词歌赋UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				24C7C0A41B51975F00AF6C05 /* Debug */,
-				24C7C0A51B51975F00AF6C05 /* Release */,
+				24DE0A8D1BA58B5E00DAFF57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 

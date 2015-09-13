@@ -93,7 +93,7 @@ extension Array {
 	func rand() -> Element {
 		let n = self.count
 		assert( n > 0, "ERROR: the array is empty!")
-		let x = Int( arc4random() ) % n
+		let x = Int( arc4random_uniform( UInt32(INT32_MAX) ) ) % n
 		return self[x]
 	}
 }

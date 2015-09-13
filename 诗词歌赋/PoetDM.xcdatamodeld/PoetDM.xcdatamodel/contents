@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8175.2" systemVersion="15A244d" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8175.2" systemVersion="15A279b" minimumToolsVersion="Xcode 7.0">
     <entity name="AuthorDB" representedClassName="AuthorModel" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="score" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="story" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="write" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PoetDB" inverseName="written_by" inverseEntity="PoetDB" syncable="YES"/>
+        <relationship name="write" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="PoetDB" inverseName="written_by" inverseEntity="PoetDB" syncable="YES"/>
     </entity>
     <entity name="Comment" representedClassName="CommentModel" syncable="YES">
         <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
@@ -37,6 +37,6 @@
         <element name="AuthorDB" positionX="117" positionY="72" width="128" height="118"/>
         <element name="Comment" positionX="108" positionY="293" width="128" height="148"/>
         <element name="Photo" positionX="405" positionY="351" width="128" height="103"/>
-        <element name="PoetDB" positionX="306" positionY="66" width="128" height="178"/>
+        <element name="PoetDB" positionX="306" positionY="66" width="128" height="180"/>
     </elements>
 </model>

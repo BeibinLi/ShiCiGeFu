@@ -64,7 +64,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 			}
 			
 			self.poet?.score  = score
-			self.poet?.setValue( score , forKey: "score")
+			self.poet?.setValue( NSNumber(longLong: score), forKey: "score")
 			
 			try context.save()
 			
@@ -184,7 +184,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 			assert(poets.count > 0, "Error: The poet DB is empty")
 			
 			repeat {
-				let num = Int( arc4random() ) % poets.count
+				if poets.count == 0 {
+					print("Error: poets is empty. Loading poet wrong")
+				}
+				let rand = Int( arc4random_uniform( UInt32(INT32_MAX) ) ) // iPhone 5 use int32 for Integers
+				let num = rand % poets.count
 				// unsigned random number with upper bound poets.count, rst in [0, poet.count)
 				self.poet = poets[num] as? PoetModel
 				
