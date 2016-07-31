@@ -14,7 +14,7 @@ extension String {
     func find(c:Character) -> Int {
         
         for(var i = 0; i < self.characters.count; i++){
-            let index = advance(self.startIndex, i)
+            let index = self.startIndex.advancedBy(i)
             
             if(self[index] == c) {
                 return i
@@ -27,14 +27,14 @@ extension String {
     
     subscript(integerIndex: Int) -> Character
         {
-            let index = advance(startIndex, integerIndex)
+            let index = startIndex.advancedBy( integerIndex)
             return self[index]
     }
     
     subscript(integerRange: Range<Int>) -> String
         {
-            let start = advance(startIndex, integerRange.startIndex)
-            let end = advance(startIndex, integerRange.endIndex)
+            let start = startIndex.advancedBy(integerRange.startIndex)
+            let end = startIndex.advancedBy( integerRange.endIndex)
             let range = start..<end
             return self[range]
     }
@@ -50,8 +50,8 @@ extension String {
         }
         
         return self.substringWithRange(Range<String.Index>(
-                    start: advance(self.startIndex, start),
-                        end: advance(self.startIndex, end)))
+                    start: self.startIndex.advancedBy( start),
+                        end: self.startIndex.advancedBy( end)))
     }
     
     

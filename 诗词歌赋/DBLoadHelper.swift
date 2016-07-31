@@ -76,7 +76,7 @@ private func load_from_json() {
 	
 	
 	
-	print("Finished Loading into CoreData")
+	print("Finished Loading to CoreData")
 	
 	
 	let f_request = NSFetchRequest(entityName: "PoetDB")
